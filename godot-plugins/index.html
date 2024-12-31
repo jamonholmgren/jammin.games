@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Godot Plugins - Jammin Games</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .plugins-header {
+        margin: 120px 0 40px;
+        text-align: center;
+      }
+      .plugin-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .plugin-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      .plugin-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .plugin-description {
+        flex-grow: 1;
+      }
+      .plugin-footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .plugin-links {
+        display: flex;
+        gap: 1rem;
+      }
+      .plugin-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .plugin-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -15,30 +59,143 @@
           <a href="/godot-plugins/">Godot Plugins</a>
         </div>
         <div class="social-links">
-          <a href="https://discord.gg/your-discord" target="_blank">Discord</a>
-          <a href="https://twitter.com/your-twitter" target="_blank">Twitter</a>
-          <a href="https://twitch.tv/your-twitch" target="_blank">Twitch</a>
+          <!-- <a href="https://discord.gg/your-discord" target="_blank">Discord</a> -->
+          <a href="https://x.com/jamonholmgren" target="_blank">𝕏</a>
+          <a href="https://twitch.tv/jamonholmgren" target="_blank">Twitch</a>
+          <a href="https://www.youtube.com/@JamminGameDev" target="_blank"
+            >YouTube</a
+          >
         </div>
       </div>
     </nav>
 
-    <div class="container" style="margin-top: 120px">
-      <h1>Godot Plugins</h1>
+    <div class="container">
+      <div class="plugins-header">
+        <h1>Godot Plugins</h1>
+        <p>
+          A collection of high-quality free plugins for Godot 4.x, from Jammin
+          Games
+        </p>
+      </div>
+
       <div class="plugin-grid">
         <div class="plugin-card">
-          <h3>Plugin Name 1</h3>
-          <p>Description of the first plugin and its features.</p>
-          <span class="status status-development">Under Development</span>
+          <img
+            src="../assets/images/jammin-ghost.gif"
+            alt="Ghost Collision Shapes Demo"
+          />
+          <h3>Jammin Ghost Collision Shapes</h3>
+          <div class="plugin-description">
+            <p>
+              Visualize collision shapes in the editor with ghostly meshes that
+              automatically match your collision shapes. Makes it easy to see
+              and adjust your collisions right in the editor!
+            </p>
+            <ul
+              style="
+                margin: 1rem 0;
+                padding-left: 1.5rem;
+                color: var(--text-secondary);
+              "
+            >
+              <li>Tiny!</li>
+              <li>Sphere, box, capsule shapes</li>
+              <li>Editor-only -- won't affect your game</li>
+              <li>Toggle ghost visibility in the editor</li>
+            </ul>
+          </div>
+          <div class="plugin-footer">
+            <a
+              href="https://github.com/jamonholmgren/jammin_ghost_collision_shapes"
+              target="_blank"
+              class="status status-released"
+              >Released</a
+            >
+            <div class="plugin-links">
+              <a
+                href="https://www.youtube.com/shorts/hm1-zX81HA0"
+                target="_blank"
+                >Watch Demo →</a
+              >
+              <a
+                href="https://github.com/jamonholmgren/jammin_ghost_collision_shapes"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+          </div>
         </div>
+
         <div class="plugin-card">
-          <h3>Plugin Name 2</h3>
-          <p>Description of the second plugin and its features.</p>
-          <span class="status status-released">Released</span>
+          <img src="../assets/images/jammin-fps.jpg" alt="Jammin FPS Counter" />
+          <h3>Jammin FPS</h3>
+          <div class="plugin-description">
+            <p>
+              A lightweight, elegant FPS counter that doesn't impact
+              performance. Unlike other FPS counters, this one is optimized to
+              have minimal overhead while providing accurate readings.
+            </p>
+            <ul
+              style="
+                margin: 1rem 0;
+                padding-left: 1.5rem;
+                color: var(--text-secondary);
+              "
+            >
+              <li>Minimal performance impact</li>
+              <li>Customizable display</li>
+              <li>Smooth updates</li>
+              <li>Easy to integrate</li>
+            </ul>
+          </div>
+          <div class="plugin-footer">
+            <span class="status status-development">Under Development</span>
+            <div class="plugin-links">
+              <a
+                href="https://github.com/jamonholmgren/jammin_fps"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+          </div>
         </div>
+
         <div class="plugin-card">
-          <h3>Plugin Name 3</h3>
-          <p>Description of the third plugin and its features.</p>
-          <span class="status status-archived">Archived</span>
+          <img
+            src="../assets/images/jammin-lobby.jpg"
+            alt="Jammin Lobby System"
+          />
+          <h3>Jammin Lobby</h3>
+          <div class="plugin-description">
+            <p>
+              A sophisticated multiplayer networking system for Godot 4.x.
+              Provides a complete solution for managing multiplayer game
+              sessions with focus on ease of use and reliability.
+            </p>
+            <ul
+              style="
+                margin: 1rem 0;
+                padding-left: 1.5rem;
+                color: var(--text-secondary);
+              "
+            >
+              <li>ENet-based networking</li>
+              <li>Automatic LAN discovery</li>
+              <li>Built-in chat system</li>
+              <li>State synchronization</li>
+              <li>Authority management</li>
+            </ul>
+          </div>
+          <div class="plugin-footer">
+            <span class="status status-development">Under Development</span>
+            <div class="plugin-links">
+              <a
+                href="https://github.com/jamonholmgren/jammin_lobby"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
