@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rotors of War - Jammin Games</title>
+    <title>Rotors of War - Jammin Games - Combat Helicopter Game</title>
+    <meta
+      name="description"
+      content="Rotors of War is a combat helicopter game in development by Jammin Games. It will feature immersive helicopter combat, co-op multiplayer, dynamic campaigns, and much more!"
+    />
     <link rel="stylesheet" href="../css/styles.css" />
     <style>
       .game-preview {
@@ -44,9 +48,241 @@
 
     <div class="container game-preview">
       <img src="../assets/images/alpha-1.jpg" alt="Rotors of War Preview" />
-      <p class="development-status">
-        Under active development 2024/2025 and beyond
+      <p class="development-status">Under Development</p>
+      <p>
+        Rotors of War is a combat helicopter game in development by Jammin
+        Games. It will feature immersive helicopter combat, co-op multiplayer,
+        dynamic campaigns, and much more!
       </p>
     </div>
+
+    <div class="container">
+      <div class="timeline">
+        <h2>Development Progress: Phase 1 (basics)</h2>
+        <p>
+          Phase 1 is all about getting everything "roughed in" -- not polished
+          and certainly not in a final release state. When everything here is at
+          100%, we'll start again at 0% for Phase 2, which will be informed by
+          the earliest alpha testing and feedback.
+        </p>
+        <p>&nbsp;</p>
+        <div class="timeline-grid">
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 65%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>Flight Model</h3>
+              <p>Advanced helicopter physics and handling</p>
+              <span class="timeline-percent">Testing and Iterating</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 10%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>Combat Systems</h3>
+              <p>Weapons, damage, targeting</p>
+              <span class="timeline-percent">Building</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 20%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>AI & Wingmen</h3>
+              <p>Formation flying, combat AI</p>
+              <span class="timeline-percent">Building</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 45%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>Multiplayer Lobby</h3>
+              <p>Networking, chat, player management</p>
+              <span class="timeline-percent">Testing and Iterating</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 10%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>Environment</h3>
+              <p>Terrain, bases, day/night cycle</p>
+              <span class="timeline-percent">Planning</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 15%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>User Interface</h3>
+              <p>HUD, menus, options</p>
+              <span class="timeline-percent">Building</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 5%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>Pilot Progression</h3>
+              <p>Ranks, medals, career mode</p>
+              <span class="timeline-percent">Planning</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 5%"></div>
+            </div>
+            <div class="timeline-content">
+              <h3>Dynamic Campaigns</h3>
+              <p>Generated missions, objectives, threats</p>
+              <span class="timeline-percent">Planning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-legend">
+          <div class="legend-item">
+            <span class="legend-dot planning"></span>
+            <span>Planning (0-25%)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot development"></span>
+            <span>Development (26-75%)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot polishing"></span>
+            <span>Polishing (76-100%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .timeline {
+        margin: 4rem auto;
+        max-width: 900px;
+      }
+
+      .timeline h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-color);
+      }
+
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .timeline-item {
+        background: var(--surface-color);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .timeline-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+
+      .timeline-progress {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s ease;
+      }
+
+      .timeline-item .timeline-progress {
+        background: linear-gradient(90deg, var(--primary-color), #ff8533);
+      }
+
+      .timeline-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .timeline-content h3 {
+        color: var(--text-color);
+        margin: 0;
+      }
+
+      .timeline-content p {
+        color: var(--text-secondary);
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .timeline-percent {
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+
+      .timeline-legend {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .legend-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .legend-dot.planning {
+        background: #ff6b00;
+      }
+
+      .legend-dot.development {
+        background: #ff8533;
+      }
+
+      .legend-dot.polishing {
+        background: #ffa066;
+      }
+
+      @media (max-width: 768px) {
+        .timeline-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-legend {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+    </style>
   </body>
 </html>
