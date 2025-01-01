@@ -203,7 +203,14 @@ nav {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+
+.plugin-card h3 img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  margin: 0;
 }
 
 .plugin-card p {
