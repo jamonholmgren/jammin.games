@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400&family=Unbounded:wght@200;300;400;500&display=swap");
+
 :root {
   --primary-color: #ff6b00;
   --secondary-color: #004a7c;
@@ -9,6 +11,8 @@
   --container-width: 1200px;
   --gradient-primary: linear-gradient(135deg, #ff6b00, #ff8533);
   --gradient-dark: linear-gradient(135deg, #111827, #1f2937);
+  --title-font: "Unbounded", cursive;
+  --subtitle-font: "Lexend", sans-serif;
 }
 
 * {
@@ -109,14 +113,55 @@ nav {
   z-index: 1;
 }
 
-.hero video {
+.hero video,
+.hero img {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 110%;
+  min-height: 110%;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  animation: helicopter 20s ease-in-out infinite;
+}
+
+@keyframes helicopter {
+  0% {
+    /* center */
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+  12% {
+    /* low left */
+    transform: translate(-50.5%, -49.5%) scale(1.03);
+  }
+  25% {
+    /* high center */
+    transform: translate(-50%, -50.5%) scale(1.03);
+  }
+  38% {
+    /* higher left */
+    transform: translate(-50.5%, -51%) scale(1.02);
+  }
+  50% {
+    /* center right */
+    transform: translate(-49.5%, -50%) scale(1.01);
+  }
+  62% {
+    /* lower right */
+    transform: translate(-49.5%, -49.5%) scale(1.02);
+  }
+  75% {
+    /* lower center */
+    transform: translate(-50%, -51%) scale(1.03);
+  }
+  88% {
+    /* low center */
+    transform: translate(-50%, -49%) scale(1.03);
+  }
+  100% {
+    /* center left */
+    transform: translate(-50.5%, -50%) scale(1.02);
+  }
 }
 
 .hero-content {
@@ -132,19 +177,36 @@ nav {
 }
 
 .hero-content h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-family: var(--title-font);
+  font-size: 5.5rem;
+  margin-bottom: 1.5rem;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  letter-spacing: -1px;
 }
 
 .hero-content p {
-  font-size: 1.25rem;
+  font-family: var(--subtitle-font);
+  font-size: 1.3rem;
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .plugin-grid {
