@@ -558,3 +558,125 @@ nav {
 .about-section a:hover::after {
   transform: scaleX(1);
 }
+
+/* News Section Styles */
+.news-section {
+  margin: 4rem auto;
+  max-width: 900px;
+}
+
+.news-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: var(--title-font);
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.news-item {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+  color: var(--text-color);
+  font-family: var(--subtitle-font);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 2rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-item p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.news-item p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .news-section {
+    margin: 3rem auto;
+  }
+
+  .news-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .news-item {
+    padding: 1.5rem;
+  }
+
+  .news-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .news-item p {
+    font-size: 1rem;
+  }
+}
+
+.news-content {
+  position: relative;
+}
+
+.expandable-content {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.read-more-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .read-more-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

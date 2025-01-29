@@ -8,7 +8,7 @@
       name="description"
       content="Into the Dawn is a combat helicopter game in development by Jammin Games. It will feature immersive helicopter combat, co-op multiplayer, dynamic campaigns, and much more!"
     />
-    <link rel="stylesheet" href="../css/styles.css?v=20241231" />
+    <link rel="stylesheet" href="../css/styles.css?v=20250129" />
     <style>
       .game-preview {
         max-width: 800px;
@@ -48,13 +48,81 @@
     </nav>
 
     <div class="container game-preview">
-      <img src="../assets/images/alpha-1.jpg" alt="Into the Dawn Preview" />
+      <img src="../assets/images/alpha-0.2.0.jpg" alt="Into the Dawn Preview" />
       <p class="development-status">Under Development</p>
       <p>
         Into the Dawn is a combat helicopter game in development by Jammin
         Games. It will feature immersive helicopter combat, co-op multiplayer,
         dynamic campaigns, and much more!
       </p>
+    </div>
+
+    <div class="container news-section">
+      <h2>Latest News</h2>
+      <div class="news-item">
+        <h3>New gameplay video -- AH-64D Apache Mission</h3>
+        <p>Posted January 29, 2025 by Jamon Holmgren</p>
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/R0bY59kZ-Cs?si=bmtcjAtESayxM7ae"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="news-content" id="news-1">
+          <p>
+            I appreciate you checking out my in-progress game, Into the Dawn!
+            It's a combat helicopter game, reminiscent of the amazing combat
+            helicopter sims of the 90s, but with multiplayer, cross-platform
+            play, modern controls...
+          </p>
+          <div class="expandable-content">
+            <p>
+              Missions won't be quite like this video in the actual game, but
+              this gives you a taste of what the core gameplay is like. In this
+              case, I scattered some tanks and AA vehicles around the map.
+            </p>
+            <p>
+              They're all set to "Green" (inexperienced) and "Relaxed" (meaning
+              they aren't being vigilant), so they see me very late, and fire
+              inaccurately when they do see me.
+            </p>
+            <p>
+              During the actual game, you'll have to plan out routes much more
+              carefully, fly low (under 150 feet), and approach cautiously if
+              you want to live. If you fly high, someone will take your head
+              off.
+            </p>
+            <p>
+              I also don't have any weapons in the game other than the 30mm
+              chaingun (which I also repurposed for the AA test vehicle) and a
+              .50cal (for the tanks). The damage model works but needs to be
+              refined.
+            </p>
+            <p>
+              There's much, much more needing to be done here. For example --
+              trees! But for the first time, I felt like I could go fly and
+              complete a mission myself. This was a lot of fun.
+            </p>
+            <p>
+              (Note: multiplayer WORKS ... I flew this one myself, but you can
+              totally have human copilot/gunners and wingmen!)
+            </p>
+          </div>
+          <button
+            class="read-more-btn"
+            aria-expanded="false"
+            aria-controls="news-1"
+          >
+            Read More
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="container">
@@ -285,5 +353,34 @@
         }
       }
     </style>
+
+    <script>
+      const newsContent = document.querySelector("#news-1");
+      const expandableContent = newsContent.querySelector(
+        ".expandable-content"
+      );
+      const readMoreBtn = newsContent.querySelector(".read-more-btn");
+
+      // Initially hide the expandable content
+      expandableContent.style.maxHeight = "0";
+      expandableContent.style.opacity = "0";
+
+      readMoreBtn.addEventListener("click", () => {
+        const isExpanded = readMoreBtn.getAttribute("aria-expanded") === "true";
+
+        // Toggle the expanded state
+        readMoreBtn.setAttribute("aria-expanded", !isExpanded);
+        readMoreBtn.textContent = isExpanded ? "Read More" : "Show Less";
+
+        // Animate the content
+        if (isExpanded) {
+          expandableContent.style.maxHeight = "0";
+          expandableContent.style.opacity = "0";
+        } else {
+          expandableContent.style.maxHeight = `${expandableContent.scrollHeight}px`;
+          expandableContent.style.opacity = "1";
+        }
+      });
+    </script>
   </body>
 </html>
