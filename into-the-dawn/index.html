@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Into the Dawn - Jammin Games - Combat Helicopter Game</title>
+    <link rel="canonical" href="https://jammin.games/into-the-dawn" />
     <meta
       name="description"
       content="Into the Dawn is a combat helicopter game in development by Jammin Games. It will feature immersive helicopter combat, co-op multiplayer, dynamic campaigns, and much more!"
@@ -32,13 +33,14 @@
       <div class="container nav-content">
         <div class="nav-links">
           <a href="/">Home</a>
-          <a href="/into-the-dawn/">Into the Dawn</a>
-          <a href="/godot-plugins/">Godot Plugins</a>
-          <a href="/about/">About</a>
+          <a href="/into-the-dawn">Into the Dawn</a>
+          <a href="/godot-plugins">Godot Plugins</a>
+          <a href="/about">About</a>
+          <a href="/faq">FAQ</a>
         </div>
         <div class="social-links">
           <!-- <a href="https://discord.gg/your-discord" target="_blank">Discord</a> -->
-          <a href="https://x.com/jamonholmgren" target="_blank">𝕏</a>
+          <a href="https://x.com/jammingames" target="_blank">𝕏</a>
           <a href="https://twitch.tv/jamonholmgren" target="_blank">Twitch</a>
           <a href="https://www.youtube.com/@JamminGameDev" target="_blank"
             >YouTube</a
@@ -59,7 +61,164 @@
 
     <div class="container news-section">
       <h2>Latest News</h2>
-      <div class="news-item">
+      <div class="news-item" id="progress-report-2025-08-10">
+        <h3>Progress Report after 1 year of development</h3>
+        <p>Posted August 10, 2025 by Jamon Holmgren</p>
+        <p>
+          I've been working on Into the Dawn for a bit over a year now in my
+          free time, and making steady progress other than a few months last
+          fall and a couple months this spring.
+        </p>
+        <p>
+          It's coming together and I find myself playing it for hours at a time.
+          I even end up having to force myself to stop playing and work on it,
+          which is unusual -- usually I find things that annoy me and I go fix
+          them. But instead I find myself just delighted with playing it.
+        </p>
+
+        <p>
+          Note: I added a section
+          <a href="#about-the-game">About the Game</a> below, so check it out. I
+          talk about my motivations for making Into the Dawn and what it's all
+          about.
+        </p>
+        <p>There's a lot to go over, so I'll just list the highlights:</p>
+
+        <div class="expandable-content">
+          <h4>Major Systems Added</h4>
+          <ul>
+            <li>
+              <strong>Damage Modeling System:</strong> HUD flickers when
+              damaged, engines lose power, tail damage causes a steady pull to
+              the right, smoke and fire effects from damaged sections, and
+              damage reports are now displayed on HUD
+              <figure class="news-image">
+                <img src="../assets/images/damage-0.3.jpg" alt="Damage Model" />
+                <figcaption>Damage Model</figcaption>
+              </figure>
+            </li>
+            <li>
+              <strong>Night Vision:</strong> Added a night vision mode with a
+              fade-in effect that looks pretty cool
+              <figure class="news-image">
+                <img
+                  src="../assets/images/night-vision-0.3.jpg"
+                  alt="Night Vision"
+                />
+                <figcaption>Night Vision</figcaption>
+              </figure>
+            </li>
+            <li>
+              <strong>AI Gunner System:</strong> Can aim the chaingun based on
+              your designated target
+            </li>
+            <li>
+              <strong>Tutorial Mode:</strong> Basic tutorial to get players
+              started
+            </li>
+            <li>
+              <strong>MFD (Multi-Function Display) System:</strong> Added radar
+              MFD, weapons MFD, damage indicator MFD, scrolling map MFD, and
+              target view FLIR MFD
+            </li>
+            <li>
+              <strong>Advanced Radar:</strong> Probabilistic scanning, beeps
+              when enemies target you, contact grouping when targets are close
+              together
+            </li>
+            <li>
+              <strong>Formation Flying Logic:</strong> Massive improvements to
+              wingmen AI and formation behavior
+            </li>
+            <li>
+              <strong>New Water Shader:</strong> Significantly improved water
+              visuals
+            </li>
+            <li>
+              <strong>Basic VR Support:</strong> Can sit in cockpit and fly (not
+              fully playable yet)
+            </li>
+          </ul>
+
+          <h4>Visual & Audio Improvements</h4>
+          <ul>
+            <li>
+              <strong>HUD Overhaul:</strong> More efficient rendering with fewer
+              draw calls, removed clutter, improved target display with range
+              indicators and view mode indicators
+            </li>
+            <li>
+              <strong>Large Vehicle Explosions:</strong> Spectacular destruction
+              effects when blowing up vehicles
+            </li>
+            <li>
+              <strong>Targeting Squares:</strong> Visual targeting system on the
+              HUD
+            </li>
+            <li>
+              <strong>Improved Rotor Effects:</strong> Visible rotor with
+              adjusted speed for better visual appeal
+            </li>
+            <li>
+              <strong>Control Stick & Collective Movement:</strong> Physical
+              cockpit controls that move with player input
+            </li>
+            <li>
+              <strong>Smart Camera System:</strong> Improved tracking of targets
+              and automatic zooming
+            </li>
+          </ul>
+
+          <h4>Performance & Optimization</h4>
+          <ul>
+            <li>
+              <strong>Memory Usage:</strong> Massive 90%+ reduction from 6GB+
+              down to ~465MB
+            </li>
+            <li><strong>Binary Size:</strong> Reduced from 500MB to ~350MB</li>
+            <li>
+              <strong>Tree Performance:</strong> 2x more efficient spawning, can
+              now handle 2M trees
+            </li>
+            <li>
+              <strong>Quality Settings:</strong> Added toaster, potato, and
+              stone age settings for lower-end machines, plus effects and shadow
+              quality options
+            </li>
+            <li>
+              <strong>Auto Quality:</strong> Intelligent settings that try to
+              maintain 60+ FPS
+            </li>
+          </ul>
+
+          <h4>New Content & Assets</h4>
+          <ul>
+            <li><strong>T-55 Tank:</strong> Added with test .50cal MG</li>
+            <li>
+              <strong>Destructible Buildings:</strong> Including farmhouses with
+              fire and smoke effects
+            </li>
+            <li>
+              <strong>Air Control Tower:</strong> Simple destructible asset
+            </li>
+            <li><strong>New Map:</strong> "Mist, Oregon" terrain</li>
+            <li>
+              <strong>Bullet System Revamp:</strong> Handles multiple calibers
+              (30cal, 50cal, 20mm, 30mm) with armor classes and penetration
+              mechanics
+            </li>
+          </ul>
+
+          <p>
+            <em
+              >...and many more small tweaks and TONS of bugfixing along the
+              way. The game has come incredibly far in just one year of
+              development!</em
+            >
+          </p>
+        </div>
+      </div>
+      <div class="news-item" id="gameplay-video-2025-01-29">
         <h3>New gameplay video -- AH-64D Apache Mission</h3>
         <p>Posted January 29, 2025 by Jamon Holmgren</p>
         <div class="video-container">
@@ -127,12 +286,18 @@
 
     <div class="container">
       <div class="timeline">
-        <h2>Development Progress: Phase 1 (basics)</h2>
+        <h2>Development Progress</h2>
         <p>
-          Phase 1 is all about getting everything "roughed in" -- not polished
-          and certainly not in a final release state. When everything here is at
-          100%, we'll start again at 0% for Phase 2, which will be informed by
-          the earliest alpha testing and feedback.
+          This phase is all about getting everything "roughed in" -- not
+          polished and certainly not in a final release state. Polishing and
+          refinement will be informed by the early alpha testing and feedback,
+          and eventually into beta and finally release.
+        </p>
+        <p>
+          It's likely the game won't launch until 2026 or so, perhaps even 2027.
+          This is a side project for me, and I'm doing my best to balance it
+          with my full-time job and family. However, I am spending almost all my
+          unstructured free time working on this game!
         </p>
         <p>&nbsp;</p>
         <div class="timeline-grid">

@@ -591,6 +591,19 @@ nav {
   font-weight: 400;
 }
 
+.news-image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: width 0.3s ease;
+}
+
+.news-image:hover {
+  width: 100%;
+}
+
 .video-container {
   position: relative;
   width: 100%;
@@ -672,6 +685,65 @@ nav {
 .read-more-btn:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.3);
+}
+
+/* List Styles */
+.news-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.news-section li {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.news-section li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  top: 0.1rem;
+}
+
+.news-section li strong {
+  color: var(--text-color);
+}
+
+.news-section h4 {
+  color: var(--primary-color);
+  margin: 2rem 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.news-section figure {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.news-section figure img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: width 0.3s ease;
+}
+
+.news-section figure img:hover {
+  width: 100%;
+}
+
+.news-section figcaption {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {

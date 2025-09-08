@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# open_in_browser function
+open_in_browser() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    open "$1"
+  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    xdg-open "$1"
+  elif [[ "$OSTYPE" == "win"* ]]; then
+    start "$1"
+  else
+    echo "Unsupported OS $OSTYPE" 
+  fi
+}
+
+# find a way to start a local server
+start_server() {
+  # check if bun is installed
+  if command -v bun &> /dev/null; then
+    bun --port 6464 ./index.html
+    exit 0
+  fi
+
+  # check if python3 is installed
+  if command -v python3 &> /dev/null; then
+    python3 -m http.server 6464
+    exit 0
+  fi
+
+  # check if php is installed
+  if command -v php &> /dev/null; then
+    php -S localhost:6464
+    exit 0
+  fi
+
+  # check if node is installed
+  if command -v npx &> /dev/null; then
+    npx http-server -p 6464
+    exit 0
+  fi
+
+  echo "Bun, Python3, PHP, or Node could not be found"
+  exit 1
+}
+
+start_server
