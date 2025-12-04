@@ -765,16 +765,10 @@ nav {
 }
 
 .news-image {
-  width: 300px;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
-  cursor: pointer;
-  transition: width 0.3s ease;
-}
-
-.news-image:hover {
-  width: 100%;
 }
 
 .video-container {
@@ -901,15 +895,9 @@ nav {
 }
 
 .news-section figure img {
-  width: 300px;
+  width: 100%;
   height: auto;
   border-radius: 8px;
-  cursor: pointer;
-  transition: width 0.3s ease;
-}
-
-.news-section figure img:hover {
-  width: 100%;
 }
 
 .news-section figcaption {
