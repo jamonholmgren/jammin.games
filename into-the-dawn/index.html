@@ -26,6 +26,49 @@
         font-size: 1.5rem;
         color: var(--primary-color);
       }
+      .about-game-section {
+        margin: 4rem auto;
+        max-width: 900px;
+      }
+      .about-game-section h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-family: var(--title-font);
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        font-weight: 300;
+      }
+      .about-game-content {
+        background: var(--surface-color);
+        border-radius: 16px;
+        padding: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .about-game-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+      .about-game-content p:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 768px) {
+        .about-game-section {
+          margin: 3rem auto;
+        }
+        .about-game-section h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+        .about-game-content {
+          padding: 1.5rem;
+        }
+        .about-game-content p {
+          font-size: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -62,6 +105,84 @@
         Games. It will feature immersive helicopter combat, co-op multiplayer,
         dynamic campaigns, and much more!
       </p>
+    </div>
+
+    <div class="container about-game-section" id="about-the-game">
+      <h2>About the Game</h2>
+      <div class="about-game-content">
+        <p>
+          Into the Dawn is a combat helicopter game reminiscent of the great
+          helicopter simulators of the 90s, but with modern co-op multiplayer,
+          cross-platform (Windows, macOS, Linux, Steam Deck) support, and all
+          the love an indie game developer can put into it.
+        </p>
+        <p>
+          You start as a fresh US Army Aviation recruit, sometime in the early
+          2000s, joining up as the west coast of the USA is being invaded by a
+          strong and determined enemy, well-equipped with Soviet-era equipment.
+          All across the Pacific coast, enemy soldiers, tanks, APCs, artillery,
+          and more are pushing inland, and the call from US leadership has gone
+          out.
+        </p>
+        <p>
+          Your skill, determination, and grit are needed to defend your country.
+        </p>
+        <p>
+          As you progress, you'll experience flight training, weapons training,
+          and (optionally) officer training. You'll then be sent into the fray
+          with a variety of aircraft: Apaches, Blackhawk DAPs, Kiowa Warriors,
+          Little Birds, SuperCobra/Vipers, Huey/Venoms, and potentially others.
+        </p>
+        <p>
+          On the weapons side, you'll deploy 30mm chainguns, Hellfire missiles,
+          HYDRA-70 rockets, Stinger anti-air missiles, among others.
+        </p>
+        <p>
+          You'll face enemy T-72, T-80, and other main battle tanks, BMP
+          infantry fighting vehicles, BTR armored personnel carriers, ZSU
+          anti-air artillery and SAM anti-air missiles, infantry equipped with a
+          variety of weapons, and others to be announced later.
+        </p>
+        <p>
+          You'll need a great team with you if you're going to succeed. If you
+          take the officer route, you'll be the commander of a platoon of
+          helicopters. As you progress you will be able to recruit a whole
+          roster of AI pilots and CP/Gs. Scout for the top flight school
+          graduates, recruit them to your platoon, assign them to pilot and CP/G
+          seats to be your wingmen based on their aptitudes and capabilities.
+          But be sure to take care of them; losing an experienced crew is the
+          ultimate loss.
+        </p>
+        <p>
+          Aside from your AI pilot roster, you'll also be able to fly with your
+          human friends. Into the Dawn supports up to 8 players in multiplayer:
+          4 pilots and 4 copilot/gunners, in a maximum 4 helicopter flight.
+        </p>
+        <p>
+          Missions are designed to take around 25 to 35 minutes – when lunchtime
+          rolls around, grab your buddies and fly a quick mission. You'll be
+          done with time to finish your sandwich and get back to work.
+        </p>
+        <p>
+          As you complete missions, you'll be promoted through the ranks – both
+          the Warrant Officer track as well as commissioned officer track.
+          You'll also receive medals and awards for your heroic actions.
+        </p>
+        <p>
+          Into the Dawn is designed to work very well on mid-level computers,
+          Windows, Macs, and Linux machines, as well as Steam Decks. You don't
+          need a gamer rig to play it. In fact, even low end machines can
+          participate – you can turn the graphics level way down to achieve a
+          good enough framerate to play with your friends. Or, if you do happen
+          to have a top notch gamer rig, then crank everything up and enjoy the
+          views.
+        </p>
+        <p>
+          Ultimately, Into the Dawn is about a love of combat helicopters and a
+          deep respect for the men and women who operate them in defense of
+          freedom.
+        </p>
+      </div>
     </div>
 
     <div class="container news-section">
@@ -168,12 +289,6 @@
           them. But instead I find myself just delighted with playing it.
         </p>
 
-        <p>
-          Note: I added a section
-          <a href="#about-the-game">About the Game</a> below, so check it out. I
-          talk about my motivations for making Into the Dawn and what it's all
-          about.
-        </p>
         <p>There's a lot to go over, so I'll just list the highlights:</p>
 
         <div class="expandable-content">
