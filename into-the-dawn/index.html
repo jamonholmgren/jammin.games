@@ -13,7 +13,7 @@
     <style>
       .game-preview {
         max-width: 800px;
-        margin: 120px auto 40px;
+        margin: 60px auto 40px;
         text-align: center;
       }
       .game-preview img {
@@ -69,6 +69,80 @@
           font-size: 1rem;
         }
       }
+
+      .steam-announcement {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 107, 0, 0.15),
+          rgba(255, 133, 51, 0.1)
+        );
+        border-bottom: 2px solid var(--primary-color);
+        padding: 0.75rem 0;
+        margin-top: var(--nav-height);
+      }
+
+      .announcement-content {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .announcement-content p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .announcement-content a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .announcement-content a:hover {
+        text-decoration: none;
+      }
+
+      .announcement-content strong {
+        color: var(--primary-color);
+      }
+
+      .steam-cta-button {
+        display: inline-block;
+        background: var(--gradient-primary);
+        color: var(--text-color);
+        padding: 0.5rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s;
+        box-shadow: 0 2px 8px rgba(255, 107, 0, 0.3);
+      }
+
+      .steam-cta-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .announcement-content p {
+          font-size: 0.9rem;
+        }
+
+        .steam-cta-button {
+          padding: 0.4rem 1.2rem;
+          font-size: 0.85rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -96,6 +170,24 @@
         </div>
       </div>
     </nav>
+
+    <div class="steam-announcement">
+      <div class="container">
+        <div class="announcement-content">
+          <p>
+            <a href="/into-the-dawn"><strong>Into the Dawn</strong></a> is now
+            on Steam!
+            <a
+              href="https://store.steampowered.com/app/4055780/Into_the_Dawn/"
+              target="_blank"
+              class="steam-cta-button"
+            >
+              Wishlist on Steam →
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
 
     <div class="container game-preview">
       <img src="../assets/images/alpha-0.4.jpg" alt="Into the Dawn Alpha 0.4" />
