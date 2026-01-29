@@ -87,59 +87,12 @@
           }
         });
       });
-
-      // Add ripple effect to buttons
-      function createRipple(event) {
-        const button = event.currentTarget;
-        const circle = document.createElement("span");
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-        circle.classList.add("ripple");
-
-        const ripple = button.getElementsByClassName("ripple")[0];
-        if (ripple) {
-          ripple.remove();
-        }
-
-        button.appendChild(circle);
-      }
-
-      // Add ripple effect to navigation links
-      document
-        .querySelectorAll(".nav-links a, .social-links a")
-        .forEach((link) => {
-          link.addEventListener("click", createRipple);
-        });
     </script>
 
     <style>
-      .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 107, 0, 0.3);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
-      }
-
-      @keyframes ripple-animation {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
-      }
-
       .steam-announcement {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 107, 0, 0.15),
-          rgba(255, 133, 51, 0.1)
-        );
-        border-bottom: 2px solid var(--primary-color);
+        background: var(--surface-color);
+        border-bottom: 1px solid var(--border-color);
         padding: 0.75rem 0;
         margin-top: var(--nav-height);
       }
@@ -170,7 +123,7 @@
       }
 
       .announcement-content a:hover {
-        text-decoration: none;
+        color: var(--primary-color);
       }
 
       .announcement-content strong {
@@ -179,20 +132,22 @@
 
       .steam-cta-button {
         display: inline-block;
-        background: var(--gradient-primary);
+        background: var(--surface-light);
         color: var(--text-color);
         padding: 0.5rem 1.5rem;
-        border-radius: 6px;
+        border-radius: 2px;
+        border: 1px solid var(--border-color);
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.95rem;
-        transition: all 0.3s;
-        box-shadow: 0 2px 8px rgba(255, 107, 0, 0.3);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: border-color 0.2s ease, color 0.2s ease;
       }
 
       .steam-cta-button:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
         text-decoration: none;
       }
 
@@ -203,7 +158,7 @@
 
         .steam-cta-button {
           padding: 0.4rem 1.2rem;
-          font-size: 0.85rem;
+          font-size: 0.8rem;
         }
       }
     </style>
