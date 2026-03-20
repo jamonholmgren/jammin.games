@@ -6,27 +6,30 @@
     <title>Jammin Games - Indie game studio</title>
     <meta
       name="description"
-      content="Jammin Games is a game development studio founded by Jamon Holmgren. We are currently developing Into the Dawn, a combat helicopter game."
+      content="Jammin Games, an indie game studio founded by Jamon Holmgren. Currently building Gunship Origins, a combat helicopter game published by MicroProse. Wishlist it on Steam!"
     />
     <link rel="canonical" href="https://jammin.games" />
-    <link rel="stylesheet" href="css/styles.css?v=20250321b" />
+    <link rel="stylesheet" href="css/styles.css?v=20250322f" />
   </head>
   <body class="home-landing">
     <nav class="nav-site">
       <div class="container nav-content nav-content--home">
         <a class="nav-brand" href="/"
-          ><img
-            class="nav-brand-logo"
-            src="assets/images/logo-gunship-origins.png"
-            width="1000"
-            height="333"
-            alt=""
-            decoding="async"
-          />
-          <span class="nav-brand-text">Jammin Games</span></a
+          ><span class="nav-brand-text">Jammin Games</span></a
         >
         <div class="nav-links nav-links--home">
-          <a href="/into-the-dawn">Game</a>
+          <a
+            class="nav-game-logo-link"
+            href="/gunship-origins"
+            aria-label="Gunship Origins"
+            ><img
+              class="nav-game-logo"
+              src="assets/images/logo-gunship-origins.png"
+              width="1000"
+              height="333"
+              alt=""
+              decoding="async"
+          /></a>
           <a href="/godot-plugins">Plugins</a>
           <a href="/about">About</a>
           <a href="/faq">FAQ</a>
@@ -91,7 +94,7 @@
               </svg>
             </a>
             <a
-              href="https://store.steampowered.com/app/4055780/Into_the_Dawn/"
+              href="https://store.steampowered.com/app/4055780/"
               target="_blank"
               rel="noopener noreferrer"
               class="social-icon"
@@ -124,69 +127,90 @@
         height="1080"
         fetchpriority="high"
       />
-      <div class="hero-content hero-content--splash">
-        <p class="hero-eyebrow">Into the Dawn</p>
-        <img
-          class="hero-game-logo"
-          src="assets/images/logo-gunship-origins.png"
-          width="1000"
-          height="333"
-          alt="Gunship Origins"
-          decoding="async"
-        />
-        <h1 class="hero-title">Jammin Games</h1>
-        <p class="hero-tagline">
-          Pacific Northwest indie studio, founded by Jamon Holmgren.
-          <span class="hero-game-note"
-            >Now building a combat helicopter action game.</span
-          >
-        </p>
-        <div class="hero-actions">
-          <a class="hero-cta hero-cta--primary" href="/into-the-dawn"
-            >See the game</a
-          >
-          <a
-            class="hero-cta hero-cta--ghost"
-            href="https://store.steampowered.com/app/4055780/Into_the_Dawn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Wishlist on Steam</a
-          >
+      <div class="hero-stack">
+        <div class="hero-content hero-content--splash">
+          <h1 class="hero-title">Jammin Games</h1>
+          <p class="hero-brand-row">
+            <a href="/gunship-origins" class="hero-eyebrow-game-link"
+              ><img
+                class="hero-eyebrow-game-logo"
+                src="assets/images/logo-gunship-origins.png"
+                width="1000"
+                height="333"
+                alt="Gunship Origins"
+                decoding="async"
+            /></a>
+            <span class="hero-eyebrow-sep" aria-hidden="true">·</span>
+            <a
+              href="https://www.microprose.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hero-microprose-link"
+              ><img
+                src="assets/images/microprose-logo.svg"
+                alt="MicroProse"
+                width="200"
+                height="29"
+                class="microprose-logo microprose-logo--hero"
+                decoding="async"
+            /></a>
+          </p>
+          <p class="hero-tagline">
+            Pacific Northwest indie studio, founded by Jamon Holmgren.
+            <span class="hero-game-note"
+              >Gunship Origins is in active development, published by MicroProse
+              — wishlist it on Steam below.</span
+            >
+          </p>
+          <div class="hero-actions">
+            <a class="hero-cta hero-cta--primary" href="/gunship-origins"
+              >See the game</a
+            >
+            <a
+              class="hero-cta hero-cta--ghost"
+              href="https://store.steampowered.com/app/4055780/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Wishlist it on Steam</a
+            >
+          </div>
         </div>
+        <section
+          class="home-shots home-shots--hero"
+          aria-label="Gunship Origins screenshots"
+        >
+          <div class="container home-shots-grid">
+            <a class="home-shot" href="/gunship-origins"
+              ><img
+                src="assets/images/gunship-origins-0.4.6-01.jpg"
+                width="1920"
+                height="1080"
+                alt="Gunship Origins gameplay"
+                loading="lazy"
+                decoding="async"
+            /></a>
+            <a class="home-shot" href="/gunship-origins"
+              ><img
+                src="assets/images/gunship-origins-0.4.6-02.jpg"
+                width="1920"
+                height="1080"
+                alt="Gunship Origins helicopter in action"
+                loading="lazy"
+                decoding="async"
+            /></a>
+            <a class="home-shot" href="/gunship-origins"
+              ><img
+                src="assets/images/gunship-origins-0.4.6-03.jpg"
+                width="1920"
+                height="1015"
+                alt="Gunship Origins scene"
+                loading="lazy"
+                decoding="async"
+            /></a>
+          </div>
+        </section>
       </div>
     </div>
-
-    <section class="home-shots" aria-label="Into the Dawn screenshots">
-      <div class="container home-shots-grid">
-        <a class="home-shot" href="/into-the-dawn"
-          ><img
-            src="assets/images/alpha-0.4.jpg"
-            width="1280"
-            height="720"
-            alt="Helicopter over coastline"
-            loading="lazy"
-            decoding="async"
-        /></a>
-        <a class="home-shot" href="/into-the-dawn"
-          ><img
-            src="assets/images/night-vision-0.3.jpg"
-            width="1280"
-            height="720"
-            alt="Cockpit night vision view"
-            loading="lazy"
-            decoding="async"
-        /></a>
-        <a class="home-shot" href="/into-the-dawn"
-          ><img
-            src="assets/images/damage-0.3.jpg"
-            width="1280"
-            height="720"
-            alt="Combat damage detail"
-            loading="lazy"
-            decoding="async"
-        /></a>
-      </div>
-    </section>
 
     <script>
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

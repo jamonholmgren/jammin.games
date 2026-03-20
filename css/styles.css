@@ -202,6 +202,10 @@ body.home-landing .nav-links--home a[aria-current="page"] {
   color: var(--primary-light);
 }
 
+body.home-landing .nav-game-logo-link[aria-current="page"] .nav-game-logo {
+  outline-color: var(--primary-light);
+}
+
 .nav-content--home {
   display: flex;
   align-items: center;
@@ -241,6 +245,36 @@ body:not(.home-landing) .nav-brand-logo {
   line-height: 1;
 }
 
+.nav-game-logo-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  padding: 0.35rem 0.35rem;
+}
+
+.nav-game-logo {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: min(48vw, 168px);
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+body:not(.home-landing) .nav-game-logo {
+  filter: none;
+}
+
+.nav-game-logo-link:hover .nav-game-logo {
+  opacity: 0.92;
+}
+
+.nav-game-logo-link[aria-current="page"] .nav-game-logo {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .nav-brand:hover {
   color: var(--primary-light);
   opacity: 1;
@@ -250,16 +284,6 @@ body:not(.home-landing) .nav-brand-logo {
   opacity: 0.95;
 }
 
-.hero-game-logo {
-  max-width: min(92vw, 400px);
-  width: 100%;
-  height: auto;
-  margin: 0 0 0.85rem;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.55));
-}
-
 .home-shots {
   padding: 2.5rem 0 3.5rem;
   background: linear-gradient(
@@ -267,6 +291,17 @@ body:not(.home-landing) .nav-brand-logo {
     #0d0b09 0%,
     var(--background-color) 45%,
     var(--background-color) 100%
+  );
+}
+
+.home-shots--hero {
+  padding: 0.5rem 0 1.1rem;
+  margin-top: 0.4rem;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(13, 11, 9, 0.5) 22%,
+    rgba(13, 11, 9, 0.9) 100%
   );
 }
 
@@ -298,7 +333,7 @@ body:not(.home-landing) .nav-brand-logo {
 
 .home-shot img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1;
   object-fit: cover;
   display: block;
 }
@@ -386,6 +421,11 @@ body:not(.home-landing) .nav-brand-logo {
   margin-top: 0;
 }
 
+body.home-landing .hero.hero--splash {
+  height: auto;
+  min-height: 100svh;
+}
+
 .hero--splash::after {
   background: linear-gradient(
     180deg,
@@ -395,28 +435,103 @@ body:not(.home-landing) .nav-brand-logo {
   );
 }
 
-.hero-content--splash {
-  padding-top: var(--nav-height);
-  justify-content: center;
+.hero-stack {
+  position: relative;
+  z-index: 2;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-eyebrow {
-  font-family: var(--subtitle-font);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--primary-light);
-  margin-bottom: 0.75rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+.hero-content--splash {
+  padding-top: calc(var(--nav-height) + 0.35rem);
+  justify-content: flex-start;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.hero-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  margin: 0 0 0.6rem;
+  width: 100%;
+}
+
+.hero-eyebrow-sep {
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0;
+}
+
+.hero-eyebrow-game-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.hero-eyebrow-game-link:hover {
+  opacity: 0.95;
+}
+
+.hero-eyebrow-game-logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  max-width: min(72vw, 240px);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.55));
+}
+
+.hero-microprose-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.45));
+}
+
+.hero-microprose-link:hover {
+  opacity: 0.92;
+}
+
+.microprose-logo {
+  display: block;
+  width: auto;
+  height: 22px;
+  max-width: min(42vw, 152px);
+  object-fit: contain;
+}
+
+.microprose-logo--hero {
+  height: 26px;
+  max-width: min(48vw, 168px);
+}
+
+.game-publisher-microprose {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  vertical-align: middle;
+}
+
+.game-publisher-microprose .microprose-logo {
+  height: 22px;
+  max-width: 140px;
+  margin: 0;
+}
+
+.legacy-banner .game-publisher-microprose {
+  margin: 0 0.2rem;
+  vertical-align: middle;
 }
 
 .hero-content--splash .hero-title {
   font-family: var(--title-font);
-  font-size: clamp(2.75rem, 8vw, 5.25rem);
+  font-size: clamp(2.5rem, 7.5vw, 4.65rem);
   font-weight: 400;
   line-height: 1.05;
-  margin-bottom: 1rem;
+  margin-bottom: 0.35rem;
   color: var(--primary-color);
   text-shadow:
     0 2px 24px rgba(0, 0, 0, 0.6),
@@ -428,18 +543,18 @@ body:not(.home-landing) .nav-brand-logo {
 
 .hero-tagline {
   font-family: var(--subtitle-font);
-  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
   font-weight: 400;
   color: var(--text-secondary);
   max-width: 32rem;
-  margin: 0 0 2rem;
-  line-height: 1.5;
+  margin: 0 0 1rem;
+  line-height: 1.45;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-game-note {
   display: block;
-  margin-top: 0.65rem;
+  margin-top: 0.4rem;
   font-size: 0.92em;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -448,7 +563,7 @@ body:not(.home-landing) .nav-brand-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.65rem;
   width: 100%;
   max-width: 280px;
 }
@@ -457,7 +572,7 @@ body:not(.home-landing) .nav-brand-logo {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 0.85rem 1.5rem;
+  padding: 0.72rem 1.35rem;
   border-radius: 8px;
   font-family: var(--subtitle-font);
   font-size: 0.92rem;
@@ -506,13 +621,24 @@ body:not(.home-landing) .nav-brand-logo {
 }
 
 @media (max-width: 900px) {
-  .home-shots-grid {
+  .home-shots:not(.home-shots--hero) .home-shots-grid {
     grid-template-columns: 1fr;
     gap: 0.85rem;
   }
 
-  .nav-brand-logo {
-    height: 26px;
+  .home-shots--hero .home-shots-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+  }
+
+  .nav-game-logo {
+    height: 24px;
+    max-width: min(52vw, 148px);
+  }
+
+  .hero-eyebrow-game-logo {
+    height: 34px;
+    max-width: min(68vw, 200px);
   }
 
   .nav-links--home {

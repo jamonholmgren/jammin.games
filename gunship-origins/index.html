@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gunship Origins - Jammin Games - Combat Helicopter Game</title>
+    <link rel="canonical" href="https://jammin.games/gunship-origins" />
+    <meta
+      name="description"
+      content="Gunship Origins is in development — combat helicopter game from Jammin Games, published by MicroProse. Wishlist it on Steam. Co-op multiplayer, campaigns, classic helicopter action."
+    />
+    <link rel="stylesheet" href="../css/styles.css?v=20250322b" />
+    <style>
+      .game-header {
+        height: 70vh;
+        position: relative;
+        background: var(--surface-color);
+        overflow: hidden;
+      }
+
+      .game-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        filter: saturate(0.6);
+      }
+
+      .game-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(
+          0deg,
+          var(--background-color) 0%,
+          transparent 100%
+        );
+      }
+
+      .game-header-content {
+        margin: -120px auto 60px;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .game-header-card {
+        background: var(--surface-light);
+        border-radius: 4px;
+        padding: 2.5rem;
+        border: 1px solid var(--border-color);
+        text-align: center;
+      }
+
+      .game-tagline {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin: 0;
+      }
+
+      .development-status {
+        font-family: var(--title-font);
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+
+      .game-publisher {
+        margin: 0 0 1rem;
+        font-size: 1rem;
+        color: var(--text-secondary);
+      }
+
+      .game-publisher a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .game-publisher a:hover {
+        color: var(--primary-light);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .game-header {
+          height: 50vh;
+        }
+
+        .game-header-content {
+          margin-top: -80px;
+        }
+
+        .game-header-card {
+          padding: 1.5rem;
+        }
+
+        .development-status {
+          font-size: 1rem;
+        }
+
+        .game-tagline {
+          font-size: 1rem;
+        }
+      }
+      .about-game-section {
+        margin: 4rem auto;
+        max-width: 900px;
+      }
+      .about-game-section h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-family: var(--title-font);
+        color: var(--primary-color);
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .about-game-content {
+        background: var(--surface-light);
+        border-radius: 4px;
+        padding: 2.5rem;
+        border: 1px solid var(--border-color);
+      }
+      .about-game-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+      .about-game-content p:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 768px) {
+        .about-game-section {
+          margin: 3rem auto;
+        }
+        .about-game-section h2 {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+        .about-game-content {
+          padding: 1.5rem;
+        }
+        .about-game-content p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-site">
+      <div class="container nav-content nav-content--home">
+        <a class="nav-brand" href="/"
+          ><span class="nav-brand-text">Jammin Games</span></a
+        >
+        <div class="nav-links nav-links--home">
+          <a
+            class="nav-game-logo-link"
+            href="/gunship-origins"
+            aria-label="Gunship Origins"
+            aria-current="page"
+            ><img
+              class="nav-game-logo"
+              src="../assets/images/logo-gunship-origins.png"
+              width="1000"
+              height="333"
+              alt=""
+              decoding="async"
+          /></a>
+          <a href="/godot-plugins">Plugins</a>
+          <a href="/about">About</a>
+          <a href="/faq">FAQ</a>
+        </div>
+        <div class="nav-right">
+          <div class="social-icons" aria-label="Social links">
+            <a
+              href="https://x.com/jammingames"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="X"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                /></svg
+            ></a>
+            <a
+              href="https://twitch.tv/jamonholmgren"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Twitch"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714V11.143z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.youtube.com/@JamminGameDev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="YouTube"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M23.498 6.186a2.93 2.93 0 0 0-2.063-2.075C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.435.611A2.93 2.93 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.93 2.93 0 0 0 2.063 2.075C4.45 20.5 12 20.5 12 20.5s7.55 0 9.435-.611a2.93 2.93 0 0 0 2.063-2.075C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                /></svg
+            ></a>
+            <a
+              href="https://store.steampowered.com/app/4055780/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Steam"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.979 0C5.678 0 .511 4.868.051 11.065l6.432 2.672a3.387 3.387 0 0 1 1.825-3.615l4.602-3.33c.14-.101.287-.19.439-.264L11.979 0z m0 11.862a3.138 3.138 0 1 0 0 6.276 3.138 3.138 0 0 0 0-6.276zm5.776 4.08l-2.223.92a3.397 3.397 0 0 1-1.673 2.05c.334.48.89.794 1.524.794a1.64 1.64 0 0 0 1.64-1.64c0-.555-.276-1.042-.684-1.124h-.002zm-6.48-4.08a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM23.95 11.09a11.96 11.96 0 0 0-7.886-7.888l-.003 4.593a3.09 3.09 0 0 1 1.704 2.758v.008a3.096 3.096 0 0 1-3.09 3.09h-.01a3.093 3.093 0 0 1-2.784-1.768l-3.316 2.4a11.977 11.977 0 0 0 15.385-3.193z"
+                /></svg
+            ></a>
+          </div>
+          <a class="nav-contact-btn" href="/about">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="game-header">
+      <img
+        src="../assets/images/gunship-origins-0.4.6-01.jpg"
+        alt="Gunship Origins"
+      />
+    </div>
+
+    <div class="game-header-content">
+      <div class="game-header-card">
+        <p class="development-status">Currently in development</p>
+        <p class="game-publisher">
+          Published by
+          <a
+            href="https://www.microprose.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="game-publisher-microprose"
+            ><img
+              src="../assets/images/microprose-logo.svg"
+              alt="MicroProse"
+              width="200"
+              height="29"
+              class="microprose-logo"
+              decoding="async"
+          /></a>
+          · Developed by Jammin Games
+        </p>
+        <p class="game-tagline">
+          Gunship Origins is still in development. It will bring immersive
+          helicopter combat, co-op multiplayer with up to 8 people, dynamic
+          campaigns, pilot progression, and more.
+        </p>
+        <p class="game-header-actions">
+          <a
+            href="https://store.steampowered.com/app/4055780/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-cta inline-cta--ghost"
+            >Wishlist it on Steam</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="container about-game-section" id="about-the-game">
+      <h2>About the Game</h2>
+      <div class="about-game-content">
+        <p>
+          Gunship Origins is currently in development. It is a combat helicopter
+          game reminiscent of the great helicopter simulators of the 90s, but
+          with modern co-op multiplayer, cross-platform (Windows, macOS, Linux,
+          Steam Deck) support, and all the love an indie game developer can put
+          into it.
+        </p>
+        <p>
+          You start as a fresh US Army Aviation recruit, sometime in the early
+          2000s, joining up as the west coast of the USA is being invaded by a
+          strong and determined enemy, well-equipped with Soviet-era equipment.
+          All across the Pacific coast, enemy soldiers, tanks, APCs, artillery,
+          and more are pushing inland, and the call from US leadership has gone
+          out.
+        </p>
+        <p>
+          Your skill, determination, and grit are needed to defend your country.
+        </p>
+        <p>
+          As you progress, you'll experience flight training, weapons training,
+          and (optionally) officer training. You'll then be sent into the fray
+          with a variety of aircraft: Apaches, Blackhawk DAPs, Kiowa Warriors,
+          Little Birds, SuperCobra/Vipers, Huey/Venoms, and potentially others.
+        </p>
+        <p>
+          On the weapons side, you'll deploy 30mm chainguns, Hellfire missiles,
+          HYDRA-70 rockets, Stinger anti-air missiles, among others.
+        </p>
+        <p>
+          You'll face enemy T-72, T-80, and other main battle tanks, BMP
+          infantry fighting vehicles, BTR armored personnel carriers, ZSU
+          anti-air artillery and SAM anti-air missiles, infantry equipped with a
+          variety of weapons, and others to be announced later.
+        </p>
+        <p>
+          You'll need a great team with you if you're going to succeed. If you
+          take the officer route, you'll be the commander of a platoon of
+          helicopters. As you progress you will be able to recruit a whole
+          roster of AI pilots and CP/Gs. Scout for the top flight school
+          graduates, recruit them to your platoon, assign them to pilot and CP/G
+          seats to be your wingmen based on their aptitudes and capabilities.
+          But be sure to take care of them; losing an experienced crew is the
+          ultimate loss.
+        </p>
+        <p>
+          Aside from your AI pilot roster, you'll also be able to fly with your
+          human friends. Gunship Origins supports up to 8 players in
+          multiplayer: 4 pilots and 4 copilot/gunners, in a maximum 4 helicopter
+          flight.
+        </p>
+        <p>
+          Missions are designed to take around 25 to 35 minutes – when lunchtime
+          rolls around, grab your buddies and fly a quick mission. You'll be
+          done with time to finish your sandwich and get back to work.
+        </p>
+        <p>
+          As you complete missions, you'll be promoted through the ranks – both
+          the Warrant Officer track as well as commissioned officer track.
+          You'll also receive medals and awards for your heroic actions.
+        </p>
+        <p>
+          Gunship Origins is designed to work very well on mid-level computers,
+          Windows, Macs, and Linux machines, as well as Steam Decks. You don't
+          need a gamer rig to play it. In fact, even low end machines can
+          participate – you can turn the graphics level way down to achieve a
+          good enough framerate to play with your friends. Or, if you do happen
+          to have a top notch gamer rig, then crank everything up and enjoy the
+          views.
+        </p>
+        <p>
+          Ultimately, Gunship Origins is about a love of combat helicopters and
+          a deep respect for the men and women who operate them in defense of
+          freedom.
+        </p>
+      </div>
+    </div>
+
+    <div class="container news-section">
+      <h2>Latest News</h2>
+      <div class="news-item" id="microprose-partnership">
+        <h3>Gunship is back — partnering with MicroProse</h3>
+        <p>Posted March 19, 2026 by Jamon Holmgren</p>
+        <p>
+          I'm incredibly excited to be working with
+          <a
+            href="https://www.microprose.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >MicroProse</a
+          >
+          to build the next Gunship. It's the first game under that banner in
+          over twenty-five years. For a kid who grew up obsessed with helicopter
+          sims and the MicroProse name on the box, this is a straight-up dream
+          come true.
+        </p>
+        <p>
+          <strong>Gunship Origins</strong> is our answer to that legacy — co-op
+          helicopter combat, campaigns, and the same reverence for the craft
+          that's been driving me for years. I'm honored that Jammin Games gets
+          to help bring it back alongside a publisher that defined the genre for
+          so many of us.
+        </p>
+        <p>
+          The game is still in active development; if you want to cheer it on,
+          <a
+            href="https://store.steampowered.com/app/4055780/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >wishlist it on Steam</a
+          >. (Older dev diaries from before the Gunship Origins name and this
+          partnership live on the
+          <a href="/into-the-dawn/">Into the Dawn archive</a>.)
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
