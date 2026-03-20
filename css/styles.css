@@ -174,11 +174,6 @@ body:not(.home-landing) .nav-site {
   border-bottom: 1px solid var(--border-color);
 }
 
-body:not(.home-landing) .nav-brand {
-  color: var(--text-color);
-  text-shadow: none;
-}
-
 body:not(.home-landing) .nav-links--home a {
   color: var(--text-secondary);
   text-shadow: none;
@@ -218,13 +213,16 @@ body.home-landing .nav-game-logo-link[aria-current="page"] .nav-game-logo {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  font-family: var(--subtitle-font);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: #fff;
+  font-family: var(--title-font);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  letter-spacing: 0.02em;
+  color: var(--primary-color);
   text-decoration: none;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 2px 24px rgba(0, 0, 0, 0.6),
+    0 0 1px rgba(0, 0, 0, 0.9),
+    0 1px 0 rgba(0, 0, 0, 0.35);
   flex-shrink: 0;
 }
 
@@ -277,6 +275,7 @@ body:not(.home-landing) .nav-game-logo {
 
 .nav-brand:hover {
   color: var(--primary-light);
+  filter: brightness(1.08);
   opacity: 1;
 }
 
@@ -295,8 +294,8 @@ body:not(.home-landing) .nav-game-logo {
 }
 
 .home-shots--hero {
-  padding: 0.5rem 0 1.25rem;
-  margin-top: 0.4rem;
+  padding: 1.5rem 0 2.75rem;
+  margin-top: 1.75rem;
   flex-shrink: 0;
   background: linear-gradient(
     180deg,
@@ -312,12 +311,18 @@ body:not(.home-landing) .nav-game-logo {
   gap: 1rem;
 }
 
+.home-shots--hero .home-shots-grid {
+  gap: 1.25rem;
+}
+
 .home-shot {
   display: block;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border-color);
   min-width: 0;
+  aspect-ratio: 1;
+  position: relative;
   transition:
     border-color 0.2s ease,
     transform 0.2s ease;
@@ -334,8 +339,10 @@ body:not(.home-landing) .nav-game-logo {
 }
 
 .home-shot img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -456,9 +463,6 @@ body.home-landing .hero.hero--splash {
 }
 
 .hero-content--splash {
-  padding-top: calc(var(--nav-height) + 0.35rem);
-  justify-content: flex-start;
-  height: auto;
   flex: 0 0 auto;
 }
 
@@ -468,7 +472,7 @@ body.home-landing .hero.hero--splash {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.55rem 0.85rem;
-  margin: 0 0 0.6rem;
+  margin: 0;
   width: 100%;
 }
 
@@ -542,8 +546,8 @@ body.home-landing .hero.hero--splash {
   font-family: var(--title-font);
   font-size: clamp(2.5rem, 7.5vw, 4.65rem);
   font-weight: 400;
-  line-height: 1.05;
-  margin-bottom: 0.35rem;
+  line-height: 1.08;
+  margin-bottom: 0;
   color: var(--primary-color);
   text-shadow:
     0 2px 24px rgba(0, 0, 0, 0.6),
@@ -559,14 +563,14 @@ body.home-landing .hero.hero--splash {
   font-weight: 400;
   color: var(--text-secondary);
   max-width: 32rem;
-  margin: 0 0 1rem;
-  line-height: 1.45;
+  margin: 0 auto;
+  line-height: 1.55;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-game-note {
   display: block;
-  margin-top: 0.4rem;
+  margin-top: 0.65rem;
   font-size: 0.92em;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -575,16 +579,31 @@ body.home-landing .hero.hero--splash {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.9rem;
   width: 100%;
   max-width: 280px;
+}
+
+.hero-content--splash .hero-actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  max-width: min(28rem, 100%);
+  gap: 0.65rem 0.85rem;
+}
+
+.hero-content--splash .hero-cta {
+  flex: 1 1 12rem;
+  width: auto;
+  min-width: min(100%, 10rem);
 }
 
 .hero-cta {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 0.72rem 1.35rem;
+  padding: 0.82rem 1.4rem;
   border-radius: 8px;
   font-family: var(--subtitle-font);
   font-size: 0.92rem;
@@ -640,7 +659,7 @@ body.home-landing .hero.hero--splash {
 
   .home-shots--hero .home-shots-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.45rem;
+    gap: 0.65rem;
   }
 
   .nav-game-logo {
@@ -675,7 +694,7 @@ body.home-landing .hero.hero--splash {
     margin-left: auto;
   }
 
-  body.home-landing .hero-content--splash {
+  body.home-landing .hero-content.hero-content--splash {
     padding-top: max(7rem, calc(env(safe-area-inset-top, 0px) + 6.25rem));
   }
 }
@@ -696,7 +715,7 @@ body.home-landing .hero.hero--splash {
     font-size: 0.7rem;
   }
 
-  body.home-landing .hero-content--splash {
+  body.home-landing .hero-content.hero-content--splash {
     padding-top: max(8.75rem, calc(env(safe-area-inset-top, 0px) + 7.75rem));
   }
 }
@@ -805,6 +824,15 @@ body.home-landing .hero.hero--splash {
   font-weight: 300;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* After generic .hero-content rules: keep splash from inheriting height:100% (was sliding under fixed nav). */
+.hero-content.hero-content--splash {
+  height: auto;
+  min-height: 0;
+  justify-content: flex-start;
+  padding: calc(var(--nav-height) + 1.75rem) 22px 0.5rem;
+  gap: clamp(1.1rem, 3.2vw, 1.65rem);
 }
 
 .plugin-grid {
