@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
       name="description"
       content="Into the Dawn is a combat helicopter game in development by Jammin Games. It will feature immersive helicopter combat, co-op multiplayer, dynamic campaigns, and much more!"
     />
-    <link rel="stylesheet" href="../css/styles.css?v=20250129" />
+    <link rel="stylesheet" href="../css/styles.css?v=20250321" />
     <style>
       .game-header {
         height: 70vh;
@@ -33,7 +33,11 @@
         left: 0;
         width: 100%;
         height: 40%;
-        background: linear-gradient(0deg, var(--background-color) 0%, transparent 100%);
+        background: linear-gradient(
+          0deg,
+          var(--background-color) 0%,
+          transparent 100%
+        );
       }
 
       .game-header-content {
@@ -132,123 +136,103 @@
           font-size: 1rem;
         }
       }
-
-      .steam-announcement {
-        background: var(--surface-color);
-        border-bottom: 1px solid var(--border-color);
-        padding: 0.75rem 0;
-        margin-top: var(--nav-height);
-      }
-
-      .announcement-content {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .announcement-content p {
-        color: var(--text-secondary);
-        font-size: 1rem;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .announcement-content a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .announcement-content a:hover {
-        color: var(--primary-color);
-      }
-
-      .announcement-content strong {
-        color: var(--primary-color);
-      }
-
-      .steam-cta-button {
-        display: inline-block;
-        background: var(--surface-light);
-        color: var(--text-color);
-        padding: 0.5rem 1.5rem;
-        border-radius: 2px;
-        border: 1px solid var(--border-color);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: border-color 0.2s ease, color 0.2s ease;
-      }
-
-      .steam-cta-button:hover {
-        border-color: var(--primary-color);
-        color: var(--primary-color);
-        text-decoration: none;
-      }
-
-      @media (max-width: 768px) {
-        .announcement-content p {
-          font-size: 0.9rem;
-        }
-
-        .steam-cta-button {
-          padding: 0.4rem 1.2rem;
-          font-size: 0.8rem;
-        }
-      }
     </style>
   </head>
   <body>
-    <nav>
-      <div class="container nav-content">
-        <div class="nav-links">
-          <a href="/">Home</a>
-          <a href="/into-the-dawn">Into the Dawn</a>
+    <nav class="nav-site">
+      <div class="container nav-content nav-content--home">
+        <a class="nav-brand" href="/"
+          ><img
+            class="nav-brand-logo"
+            src="../assets/images/logo-gunship-origins.png"
+            width="1000"
+            height="333"
+            alt=""
+            decoding="async"
+          />
+          <span class="nav-brand-text">Jammin Games</span></a
+        >
+        <div class="nav-links nav-links--home">
+          <a href="/into-the-dawn" aria-current="page">Game</a>
           <a href="/godot-plugins">Plugins</a>
           <a href="/about">About</a>
           <a href="/faq">FAQ</a>
         </div>
-        <div class="social-links">
-          <!-- <a href="https://discord.gg/your-discord" target="_blank">Discord</a> -->
-          <a href="https://x.com/jammingames" target="_blank">𝕏</a>
-          <a href="https://twitch.tv/jamonholmgren" target="_blank">Twitch</a>
-          <a href="https://www.youtube.com/@JamminGameDev" target="_blank"
-            >YouTube</a
-          >
-          <a
-            href="https://store.steampowered.com/app/4055780/Into_the_Dawn/"
-            target="_blank"
-            >Steam</a
-          >
-        </div>
-      </div>
-    </nav>
-
-    <div class="steam-announcement">
-      <div class="container">
-        <div class="announcement-content">
-          <p>
-            <a href="/into-the-dawn"><strong>Into the Dawn</strong></a> is now
-            on Steam!
+        <div class="nav-right">
+          <div class="social-icons" aria-label="Social links">
+            <a
+              href="https://x.com/jammingames"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="X"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                /></svg
+            ></a>
+            <a
+              href="https://twitch.tv/jamonholmgren"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Twitch"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714V11.143z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.youtube.com/@JamminGameDev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="YouTube"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M23.498 6.186a2.93 2.93 0 0 0-2.063-2.075C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.435.611A2.93 2.93 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.93 2.93 0 0 0 2.063 2.075C4.45 20.5 12 20.5 12 20.5s7.55 0 9.435-.611a2.93 2.93 0 0 0 2.063-2.075C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                /></svg
+            ></a>
             <a
               href="https://store.steampowered.com/app/4055780/Into_the_Dawn/"
               target="_blank"
-              class="steam-cta-button"
-            >
-              Wishlist on Steam →
-            </a>
-          </p>
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Steam"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.979 0C5.678 0 .511 4.868.051 11.065l6.432 2.672a3.387 3.387 0 0 1 1.825-3.615l4.602-3.33c.14-.101.287-.19.439-.264L11.979 0z m0 11.862a3.138 3.138 0 1 0 0 6.276 3.138 3.138 0 0 0 0-6.276zm5.776 4.08l-2.223.92a3.397 3.397 0 0 1-1.673 2.05c.334.48.89.794 1.524.794a1.64 1.64 0 0 0 1.64-1.64c0-.555-.276-1.042-.684-1.124h-.002zm-6.48-4.08a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM23.95 11.09a11.96 11.96 0 0 0-7.886-7.888l-.003 4.593a3.09 3.09 0 0 1 1.704 2.758v.008a3.096 3.096 0 0 1-3.09 3.09h-.01a3.093 3.093 0 0 1-2.784-1.768l-3.316 2.4a11.977 11.977 0 0 0 15.385-3.193z"
+                /></svg
+            ></a>
+          </div>
+          <a class="nav-contact-btn" href="/about">Contact</a>
         </div>
       </div>
-    </div>
+    </nav>
 
     <div class="game-header">
       <img src="../assets/images/alpha-0.4.jpg" alt="Into the Dawn" />
@@ -259,8 +243,18 @@
         <p class="development-status">Under Development</p>
         <p class="game-tagline">
           Into the Dawn is a combat helicopter game in development by Jammin
-          Games. It will feature immersive helicopter combat, co-op multiplayer with up to 8 people,
-          dynamic campaigns, pilot progression, and much more!
+          Games. It will feature immersive helicopter combat, co-op multiplayer
+          with up to 8 people, dynamic campaigns, pilot progression, and much
+          more!
+        </p>
+        <p class="game-header-actions">
+          <a
+            href="https://store.steampowered.com/app/4055780/Into_the_Dawn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-cta inline-cta--ghost"
+            >Wishlist on Steam</a
+          >
         </p>
       </div>
     </div>
@@ -411,7 +405,15 @@
             src="https://www.youtube.com/embed/XtNtRdqAZoo"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
@@ -596,7 +598,15 @@
             src="https://www.youtube.com/embed/R0bY59kZ-Cs?si=bmtcjAtESayxM7ae"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
@@ -775,7 +785,7 @@
     <script>
       const newsContent = document.querySelector("#news-1");
       const expandableContent = newsContent.querySelector(
-        ".expandable-content"
+        ".expandable-content",
       );
       const readMoreBtn = newsContent.querySelector(".read-more-btn");
 
