@@ -295,8 +295,11 @@ body:not(.home-landing) .nav-game-logo {
 }
 
 .home-shots--hero {
-  padding: 0.5rem 0 1.1rem;
-  margin-top: 0.4rem;
+  padding: 0.5rem 0 1.25rem;
+  margin-top: auto;
+  flex: 1 1 0;
+  display: flex;
+  align-items: flex-end;
   background: linear-gradient(
     180deg,
     transparent 0%,
@@ -305,9 +308,13 @@ body:not(.home-landing) .nav-game-logo {
   );
 }
 
+.home-shots--hero .home-shots-grid {
+  width: 100%;
+}
+
 .home-shots-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -316,6 +323,7 @@ body:not(.home-landing) .nav-game-logo {
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  min-width: 0;
   transition:
     border-color 0.2s ease,
     transform 0.2s ease;
@@ -338,20 +346,34 @@ body:not(.home-landing) .nav-game-logo {
   display: block;
 }
 
+.home-shots--hero .home-shot img {
+  max-height: 28svh;
+}
+
 .nav-links--home {
   position: absolute;
   left: 50%;
+  top: 0;
+  bottom: 0;
   transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
   gap: 1.75rem;
 }
 
-.nav-links--home a {
+.nav-links--home a:not(.nav-game-logo-link) {
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   padding: 0.5rem 0.35rem;
   font-size: 0.8rem;
   text-transform: none;
   letter-spacing: 0.02em;
+}
+
+.nav-links--home a.nav-game-logo-link {
+  text-shadow: none;
+  padding: 0.35rem;
 }
 
 .nav-links--home a:hover {
@@ -438,9 +460,10 @@ body.home-landing .hero.hero--splash {
 .hero-stack {
   position: relative;
   z-index: 2;
-  min-height: 100svh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .hero-content--splash {
@@ -633,7 +656,7 @@ body.home-landing .hero.hero--splash {
 
   .nav-game-logo {
     height: 24px;
-    max-width: min(52vw, 148px);
+    max-width: min(48vw, 148px);
   }
 
   .hero-eyebrow-game-logo {
@@ -662,6 +685,10 @@ body.home-landing .hero.hero--splash {
   .nav-right {
     margin-left: auto;
   }
+
+  body.home-landing .hero-content--splash {
+    padding-top: max(7rem, calc(env(safe-area-inset-top, 0px) + 6.25rem));
+  }
 }
 
 @media (max-width: 600px) {
@@ -678,6 +705,10 @@ body.home-landing .hero.hero--splash {
   .nav-contact-btn {
     padding: 0.4rem 0.85rem;
     font-size: 0.7rem;
+  }
+
+  body.home-landing .hero-content--splash {
+    padding-top: max(8.75rem, calc(env(safe-area-inset-top, 0px) + 7.75rem));
   }
 }
 
