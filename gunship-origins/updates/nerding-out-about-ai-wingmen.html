@@ -12,7 +12,7 @@
       name="description"
       content="How AI wingmen work in Gunship Origins: NPC pilots, fatigue, distraction, skills, and progression."
     />
-    <link rel="stylesheet" href="../../css/styles.css?v=20250328" />
+    <link rel="stylesheet" href="../../css/styles.css?v=20250329" />
   </head>
   <body>
     <nav class="nav-site">
@@ -119,15 +119,9 @@
       </p>
       <article class="news-item" id="nerding-out-about-ai-wingmen">
         <h1>Nerding Out About AI Wingmen</h1>
-        <header>
-          <p>
-            <time datetime="2026-03-25">March 25, 2026</time>
-            by Jamon Holmgren
-          </p>
-        </header>
         <p>
-          Although you can fly with only other humans if you want, AI teammates
-          are a big part of Gunship Origins.
+          <time datetime="2026-03-25">March 25, 2026</time>
+          by Jamon Holmgren
         </p>
         <figure class="news-image">
           <button
@@ -148,10 +142,14 @@
           </button>
         </figure>
         <p>
+          Although you can fly with only other humans if you want, AI teammates
+          are a big part of Gunship Origins.
+        </p>
+        <p>
           What&rsquo;s really cool is that they&rsquo;re modeled internally as
           individual characters (NPCs) with an individual event / decision /
-          action loop which is throttled at their skill level for the given event
-          type.
+          action loop which is throttled at their skill level for the given
+          event type.
         </p>
         <p>
           For an AI-controlled helicopter, there are actually two NPCs in there,
@@ -194,10 +192,10 @@
         </p>
         <h2>DISTRACTION</h2>
         <p>
-          NPC pilots can get distracted, depending on their skill/experience
-          and fatigue, which means for a given loop they might not react to an
-          event that comes in as quickly. This is one of the primary ways
-          you&rsquo;ll notice the difference between better and worse wingmen.
+          NPC pilots can get distracted, depending on their skill/experience and
+          fatigue, which means for a given loop they might not react to an event
+          that comes in as quickly. This is one of the primary ways you&rsquo;ll
+          notice the difference between better and worse wingmen.
         </p>
         <p>
           If you have an inexperienced and fatigued pilot (or wounded!), they
@@ -206,8 +204,8 @@
           pilot less effective.
         </p>
         <p>
-          This means if you have an inexperienced pilot, you should probably
-          put an experienced pilot with them, so the helicopter can still be
+          This means if you have an inexperienced pilot, you should probably put
+          an experienced pilot with them, so the helicopter can still be
           effective.
         </p>
         <h2 id="skill-levels">SKILL LEVELS</h2>
@@ -233,12 +231,12 @@
           </p>
           <h3>POTENTIAL</h3>
           <p>
-            This is a hidden attribute that affects how quickly pilots learn from
-            training and real-world missions. The idea is that you might pick up a
-            good pilot out of flight school, but they&rsquo;re kind of a slow
-            learner for gunnery, so they just never really get that good at
-            firing the chaingun (they&rsquo;re inaccurate, waste ammo). Or, you
-            pick up a young phenom, and they quickly become one of your best
+            This is a hidden attribute that affects how quickly pilots learn
+            from training and real-world missions. The idea is that you might
+            pick up a good pilot out of flight school, but they&rsquo;re kind of
+            a slow learner for gunnery, so they just never really get that good
+            at firing the chaingun (they&rsquo;re inaccurate, waste ammo). Or,
+            you pick up a young phenom, and they quickly become one of your best
             pilots. (I&rsquo;m still working on potential / learning, so while
             this is modeled in code to some degree, it&rsquo;s still a very
             rough early concept version.)
@@ -282,7 +280,11 @@
       </article>
     </main>
 
-    <dialog class="news-image-lightbox" id="gunship-origins-image-lightbox" aria-label="Full size image">
+    <dialog
+      class="news-image-lightbox"
+      id="gunship-origins-image-lightbox"
+      aria-label="Full size image"
+    >
       <div class="news-image-lightbox-panel">
         <button type="button" class="news-image-lightbox-close">Close</button>
         <img src="" alt="" />
@@ -307,11 +309,16 @@
           dlgImg.alt = "";
         }
 
-        document.querySelectorAll(".js-gunship-lightbox").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            openLightbox(btn.getAttribute("data-full-src"), btn.getAttribute("data-full-alt"));
+        document
+          .querySelectorAll(".js-gunship-lightbox")
+          .forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              openLightbox(
+                btn.getAttribute("data-full-src"),
+                btn.getAttribute("data-full-alt"),
+              );
+            });
           });
-        });
 
         closeBtn.addEventListener("click", closeLightbox);
         dlg.addEventListener("click", function (e) {

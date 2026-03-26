@@ -9,7 +9,7 @@
       name="description"
       content="Gunship Origins: combat helicopter game from Jammin Games, published by MicroProse. Wishlist it on Steam! Co-op multiplayer, campaigns, classic helicopter action."
     />
-    <link rel="stylesheet" href="../css/styles.css?v=20250328" />
+    <link rel="stylesheet" href="../css/styles.css?v=20250329" />
     <style>
       .game-header {
         height: 70vh;
@@ -406,17 +406,17 @@
       <ul class="gunship-updates-tiles" role="list">
         <!--
           When you add a newer update: insert a new <li> at the top of this list.
-          Move class `gunship-update-tile--new` onto that tile's <a> only, and move the
-          `<span class="gunship-update-tile-new-pill">NEW</span>` into that tile's
+          Move class `gunship-update-tile--latest` onto that tile's <a> only, and move the
+          `<span class="gunship-update-tile-latest-pill">LATEST</span>` into that tile's
           `.gunship-update-tile-thumb-wrap` (remove both from the older tile).
         -->
         <li>
           <a
-            class="gunship-update-tile gunship-update-tile--new"
+            class="gunship-update-tile gunship-update-tile--latest"
             href="/gunship-origins/updates/nerding-out-about-ai-wingmen.html"
           >
             <span class="gunship-update-tile-thumb-wrap">
-              <span class="gunship-update-tile-new-pill">NEW</span>
+              <span class="gunship-update-tile-latest-pill">LATEST</span>
               <img
                 class="gunship-update-tile-thumb"
                 src="../assets/images/gunship-origins-0.4-wingmen.jpg"
@@ -469,6 +469,51 @@
           rest.hidden = false;
           wrap.hidden = true;
           btn.setAttribute("aria-expanded", "true");
+        });
+      })();
+      (function () {
+        function parseLocalDate(ymd) {
+          var part = ymd.split("T")[0];
+          var p = part.split("-");
+          if (p.length !== 3) return null;
+          var y = parseInt(p[0], 10);
+          var m = parseInt(p[1], 10) - 1;
+          var d = parseInt(p[2], 10);
+          if (Number.isNaN(y) || Number.isNaN(m) || Number.isNaN(d)) return null;
+          return new Date(y, m, d);
+        }
+
+        function calendarDaysBetween(pub, today) {
+          var a = new Date(pub.getFullYear(), pub.getMonth(), pub.getDate());
+          var b = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+          return Math.round((b - a) / 86400000);
+        }
+
+        function relativePhrase(diff) {
+          if (diff < 0) return null;
+          if (diff === 0) return "today";
+          if (diff === 1) return "yesterday";
+          if (diff >= 2 && diff <= 6) return diff + " days ago";
+          if (diff >= 7 && diff <= 13) return "1 week ago";
+          if (diff >= 14 && diff <= 20) return "2 weeks ago";
+          if (diff === 21) return "3 weeks ago";
+          return null;
+        }
+
+        var now = new Date();
+        document.querySelectorAll(".gunship-update-tile-date").forEach(function (el) {
+          var raw = el.getAttribute("datetime");
+          if (!raw) return;
+          var pub = parseLocalDate(raw);
+          if (!pub) return;
+          var diff = calendarDaysBetween(pub, now);
+          var phrase = relativePhrase(diff);
+          if (!phrase) return;
+          el.appendChild(document.createTextNode(" "));
+          var span = document.createElement("span");
+          span.className = "gunship-update-tile-relative";
+          span.textContent = "(" + phrase + ")";
+          el.appendChild(span);
         });
       })();
     </script>
