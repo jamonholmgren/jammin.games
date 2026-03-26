@@ -9,7 +9,7 @@
       name="description"
       content="Gunship Origins: combat helicopter game from Jammin Games, published by MicroProse. Wishlist it on Steam! Co-op multiplayer, campaigns, classic helicopter action."
     />
-    <link rel="stylesheet" href="../css/styles.css?v=20250325" />
+    <link rel="stylesheet" href="../css/styles.css?v=20250328" />
     <style>
       .game-header {
         height: 70vh;
@@ -134,8 +134,22 @@
         margin-bottom: 1.5rem;
         font-size: 1.1rem;
       }
-      .about-game-content p:last-child {
+      .about-game-rest p:last-child {
         margin-bottom: 0;
+      }
+      .about-game-expand-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .about-game-expand-btn:hover {
+        color: var(--primary-light);
       }
       @media (max-width: 768px) {
         .about-game-section {
@@ -149,6 +163,9 @@
           padding: 1.5rem;
         }
         .about-game-content p {
+          font-size: 1rem;
+        }
+        .about-game-expand-btn {
           font-size: 1rem;
         }
       }
@@ -318,299 +335,140 @@
         <p>
           Your skill, determination, and grit are needed to defend your country.
         </p>
-        <p>
-          As you progress, you'll experience flight training, weapons training,
-          and (optionally) officer training. You'll then be sent into the fray
-          with a variety of helicopters: Apaches, Blackhawks, Kiowa Warriors,
-          and more.
+        <p class="about-game-expand-wrap">
+          <button
+            type="button"
+            class="about-game-expand-btn"
+            aria-expanded="false"
+            aria-controls="about-game-rest"
+          >
+            ...read the rest
+          </button>
         </p>
-        <p>
-          On the weapons side, you'll deploy 30mm chainguns, Hellfire missiles,
-          HYDRA-70 rockets, Stinger anti-air missiles, among others.
-        </p>
-        <p>
-          You'll face enemy T-72, T-80, and other main battle tanks, BMP
-          infantry fighting vehicles, BTR armored personnel carriers, ZSU
-          anti-air artillery and SAM anti-air missiles, infantry equipped with a
-          variety of weapons, and others to be announced later.
-        </p>
-        <p>
-          You'll need a great team with you if you're going to succeed. If you
-          take the officer route, you'll be the commander of a platoon of
-          helicopters. As you progress you will be able to recruit and manage a
-          whole roster of AI pilots and CP/Gs. Scout for the top flight school
-          graduates, recruit them to your platoon, assign them to pilot and CP/G
-          seats to be your wingmen based on their aptitudes and capabilities.
-          But be sure to take care of them; losing an experienced crew is the
-          ultimate loss.
-        </p>
-        <p>
-          Aside from your AI pilot roster, you'll also be able to fly with your
-          human friends. Gunship Origins supports up to 8 players in co-op
-          multiplayer: 4 pilots and 4 copilot/gunners, in a maximum 4 helicopter
-          flight.
-        </p>
-        <p>
-          Missions are designed to take around 25 to 35 minutes – when lunchtime
-          rolls around, grab your buddies and fly a quick mission. You'll be
-          done with time to finish your sandwich and get back to work.
-        </p>
-        <p>
-          As you complete missions, you'll be promoted through the ranks – both
-          the Warrant Officer track as well as commissioned officer track.
-          You'll also receive medals and awards for your heroic actions.
-        </p>
-        <p>
-          Gunship Origins is designed to work well on mid-level computers,
-          Windows, Macs, and Linux machines, as well as Steam Decks. You don't
-          need a gamer rig to play it. In fact, even lower end machines can
-          participate – you can turn the graphics level way down to achieve a
-          good enough framerate to play with your friends. Or, if you do happen
-          to have a top notch gamer rig, then crank everything up and enjoy the
-          views.
-        </p>
+        <div id="about-game-rest" class="about-game-rest" hidden>
+          <p>
+            As you progress, you'll experience flight training, weapons training,
+            and (optionally) officer training. You'll then be sent into the fray
+            with a variety of helicopters: Apaches, Blackhawks, Kiowa Warriors,
+            and more.
+          </p>
+          <p>
+            On the weapons side, you'll deploy 30mm chainguns, Hellfire missiles,
+            HYDRA-70 rockets, Stinger anti-air missiles, among others.
+          </p>
+          <p>
+            You'll face enemy T-72, T-80, and other main battle tanks, BMP
+            infantry fighting vehicles, BTR armored personnel carriers, ZSU
+            anti-air artillery and SAM anti-air missiles, infantry equipped with a
+            variety of weapons, and others to be announced later.
+          </p>
+          <p>
+            You'll need a great team with you if you're going to succeed. If you
+            take the officer route, you'll be the commander of a platoon of
+            helicopters. As you progress you will be able to recruit and manage a
+            whole roster of AI pilots and CP/Gs. Scout for the top flight school
+            graduates, recruit them to your platoon, assign them to pilot and CP/G
+            seats to be your wingmen based on their aptitudes and capabilities.
+            But be sure to take care of them; losing an experienced crew is the
+            ultimate loss.
+          </p>
+          <p>
+            Aside from your AI pilot roster, you'll also be able to fly with your
+            human friends. Gunship Origins supports up to 8 players in co-op
+            multiplayer: 4 pilots and 4 copilot/gunners, in a maximum 4 helicopter
+            flight.
+          </p>
+          <p>
+            Missions are designed to take around 25 to 35 minutes – when lunchtime
+            rolls around, grab your buddies and fly a quick mission. You'll be
+            done with time to finish your sandwich and get back to work.
+          </p>
+          <p>
+            As you complete missions, you'll be promoted through the ranks – both
+            the Warrant Officer track as well as commissioned officer track.
+            You'll also receive medals and awards for your heroic actions.
+          </p>
+          <p>
+            Gunship Origins is designed to work well on mid-level computers,
+            Windows, Macs, and Linux machines, as well as Steam Decks. You don't
+            need a gamer rig to play it. In fact, even lower end machines can
+            participate – you can turn the graphics level way down to achieve a
+            good enough framerate to play with your friends. Or, if you do happen
+            to have a top notch gamer rig, then crank everything up and enjoy the
+            views.
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="container news-section">
-      <h2>Latest News</h2>
-      <article class="news-item" id="nerding-out-about-ai-wingmen">
-        <h2>Nerding Out About AI Wingmen</h2>
-        <header>
-          <p>
-            <time datetime="2026-03-25">March 25, 2026</time>
-            by Jamon Holmgren
-          </p>
-        </header>
-        <p>
-          Although you can fly with only other humans if you want, AI teammates
-          are a big part of Gunship Origins.
-        </p>
-        <figure class="news-image">
-          <button
-            type="button"
-            class="news-image-zoom js-gunship-lightbox"
-            data-full-src="../assets/images/gunship-origins-0.4-wingmen.jpg"
-            data-full-alt="In-game view of AI wingmen flying with the player"
-            aria-label="View full size: AI wingmen screenshot"
-          >
-            <img
-              src="../assets/images/gunship-origins-0.4-wingmen.jpg"
-              alt="In-game view of AI wingmen flying with the player"
-              width="4096"
-              height="2304"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-        </figure>
-        <p>
-          What&rsquo;s really cool is that they&rsquo;re modeled internally as
-          individual characters (NPCs) with an individual event / decision /
-          action loop which is throttled at their skill level for the given event
-          type.
-        </p>
-        <p>
-          For an AI-controlled helicopter, there are actually two NPCs in there,
-          not just one generic AI for the whole helicopter.
-        </p>
-        <p>
-          They split up the responsibilities for operating the helicopter based
-          on their seat&rsquo;s role (pilot or copilot/gunner), but also will
-          both take events from a prioritized shared queue and do them.
-        </p>
-        <figure class="news-image">
-          <button
-            type="button"
-            class="news-image-zoom js-gunship-lightbox"
-            data-full-src="../assets/images/gunship-origins-0.4-wingmen-code.jpg"
-            data-full-alt="Code excerpt showing NPC wingman event and action logic"
-            aria-label="View full size: wingman code screenshot"
-          >
-            <img
-              src="../assets/images/gunship-origins-0.4-wingmen-code.jpg"
-              alt="Code excerpt showing NPC wingman event and action logic"
-              width="2128"
-              height="1000"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-        </figure>
-        <p>
-          These NPC (non-playable character) pilots have these characteristics
-          already modeled in code or currently planned, among others:
-        </p>
-        <h2>FATIGUE</h2>
-        <p>
-          NPC pilots can get fatigued by long missions, especially if you have
-          many long, intense missions in a row. There&rsquo;s a build-up of
-          fatigue over time, and you should rest pilots by leaving them in the
-          roster pool for a mission or two; this likely will apply mostly to the
-          campaign mode.
-        </p>
-        <h2>DISTRACTION</h2>
-        <p>
-          NPC pilots can get distracted, depending on their skill/experience
-          and fatigue, which means for a given loop they might not react to an
-          event that comes in as quickly. This is one of the primary ways
-          you&rsquo;ll notice the difference between better and worse wingmen.
-        </p>
-        <p>
-          If you have an inexperienced and fatigued pilot (or wounded!), they
-          might be reacting slowly. The other pilot in the helicopter will be
-          taking on more of the shared action queue which will in turn make that
-          pilot less effective.
-        </p>
-        <p>
-          This means if you have an inexperienced pilot, you should probably
-          put an experienced pilot with them, so the helicopter can still be
-          effective.
-        </p>
-        <h2 id="skill-levels">SKILL LEVELS</h2>
-        <p>
-          It&rsquo;s not just a total skill level. Think more like sports games
-          like Madden, NBA 2k.
-        </p>
-        <p>
-          I currently have piloting, gunnery, and navigation skills modeled, but
-          am going to add more (I hope many more &hellip; give me ideas on what
-          kinds of skills you&rsquo;d like to see and what these might affect)
-        </p>
-        <section aria-labelledby="skill-levels">
-          <h3>PILOTING</h3>
-          <p>
-            How quickly and accurately they fly. This affects formation flying,
-            avoiding obstacles, approaching enemies, etc. Inexperienced pilots
-            will &ldquo;bob&rdquo; up and down more in terms of altitude or
-            linger in visible areas which might give away your position.
-            Excellent pilots will be precise and quick. When you&rsquo;re
-            planning your missions, you&rsquo;ll want to put excellent pilots in
-            the pilot seat, excellent gunners in the copilot/gunner (CP/G) seat.
-          </p>
-          <h3>POTENTIAL</h3>
-          <p>
-            This is a hidden attribute that affects how quickly pilots learn from
-            training and real-world missions. The idea is that you might pick up a
-            good pilot out of flight school, but they&rsquo;re kind of a slow
-            learner for gunnery, so they just never really get that good at
-            firing the chaingun (they&rsquo;re inaccurate, waste ammo). Or, you
-            pick up a young phenom, and they quickly become one of your best
-            pilots. (I&rsquo;m still working on potential / learning, so while
-            this is modeled in code to some degree, it&rsquo;s still a very
-            rough early concept version.)
-          </p>
-          <h3>RECOVERY</h3>
-          <p>
-            (planned) If an NPC pilot is wounded, it may take a few missions for
-            them to recover. You&rsquo;ll have a roster with a couple extra
-            pilots to cover for those who are out injured. If you don&rsquo;t
-            have enough healthy pilots to cover all the crews, you&rsquo;ll have
-            to fly out with fewer helicopters. If you&rsquo;re the only pilot
-            available, then you&rsquo;ll have to skip a mission, which is a
-            negative mission result for the campaign you&rsquo;re on. Those are
-            the breaks &mdash; protect your crews!
-          </p>
-        </section>
-        <h2>NPC PROGRESSION</h2>
-        <p>
-          Of course, NPC pilots have their own ranks, medals, can be WIA
-          (wounded in action) or KIA (killed in action), and you&rsquo;ll have
-          to replace them with fresh green Warrant Officer 1 pilots just out of
-          Fort Rucker flight school.
-        </p>
-        <h2>RANDOM IDEAS</h2>
-        <p>
-          It would be fun to add chemistry and morale characteristics as well.
-        </p>
-        <p>
-          Losing a pilot would mean a hit to your pilots&rsquo; morale, which
-          would increase their distraction chance, which would make them less
-          focused.
-        </p>
-        <p>
-          Having a crew that doesn&rsquo;t get along would also make them less
-          focused. You might need to move them into different helicopters.
-        </p>
-        <p>
-          These are just ideas. What ideas do you have? Email me at
-          <a href="mailto:ideas@jammin.games">ideas@jammin.games</a>!
-        </p>
-      </article>
-      <article class="news-item" id="microprose-partnership">
-        <h3>Gunship is back — partnering with MicroProse</h3>
-        <p>Posted March 19, 2026 by Jamon Holmgren</p>
-        <p>
-          I'm incredibly excited to be working with
+      <h2>Updates</h2>
+      <ul class="gunship-updates-tiles" role="list">
+        <!--
+          When you add a newer update: insert a new <li> at the top of this list.
+          Move class `gunship-update-tile--new` onto that tile's <a> only, and move the
+          `<span class="gunship-update-tile-new-pill">NEW</span>` into that tile's
+          `.gunship-update-tile-thumb-wrap` (remove both from the older tile).
+        -->
+        <li>
           <a
-            href="https://www.microprose.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >MicroProse</a
+            class="gunship-update-tile gunship-update-tile--new"
+            href="/gunship-origins/updates/nerding-out-about-ai-wingmen.html"
           >
-          to build the next Gunship, the first in over 25 years. For a kid who
-          grew up in the 90s obsessed with helicopter sims like Gunship 2000,
-          Comanche, as well as many other games from the legendary MicroProse,
-          this is an incredible dream come true.
-        </p>
-        <p>
-          <strong>Gunship Origins</strong> is the game I always wanted to make —
-          co-op helicopter combat, campaigns, pilot progression, pilot roster
-          management, and more. I'm incredibly honored that MicroProse entrusted
-          me with the legacy of Gunship. I won't take it lightly.
-        </p>
-        <p>
-          The game is still in active development; if you want to cheer it on,
+            <span class="gunship-update-tile-thumb-wrap">
+              <span class="gunship-update-tile-new-pill">NEW</span>
+              <img
+                class="gunship-update-tile-thumb"
+                src="../assets/images/gunship-origins-0.4-wingmen.jpg"
+                alt=""
+                width="4096"
+                height="2304"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+            <span class="gunship-update-tile-body">
+              <span class="gunship-update-tile-title">Nerding Out About AI Wingmen</span>
+              <time class="gunship-update-tile-date" datetime="2026-03-25">March 25, 2026</time>
+              <span class="gunship-update-tile-cta">Click to read more</span>
+            </span>
+          </a>
+        </li>
+        <li>
           <a
-            href="https://store.steampowered.com/app/4055780/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >wishlist it on Steam</a
-          >. (Older dev diaries from before the MicroProse partnership and
-          Gunship Origins title live on the
-          <a href="/into-the-dawn/">Into the Dawn archive</a>.)
-        </p>
-      </article>
+            class="gunship-update-tile"
+            href="/gunship-origins/updates/gunship-is-back.html"
+          >
+            <span class="gunship-update-tile-thumb-wrap">
+              <img
+                class="gunship-update-tile-thumb"
+                src="../assets/images/gunship-origins-0.4.6-01.jpg"
+                alt=""
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+            <span class="gunship-update-tile-body">
+              <span class="gunship-update-tile-title">Gunship is back — partnering with MicroProse</span>
+              <time class="gunship-update-tile-date" datetime="2026-03-19">March 19, 2026</time>
+              <span class="gunship-update-tile-cta">Click to read more</span>
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
-
-    <dialog class="news-image-lightbox" id="gunship-origins-image-lightbox" aria-label="Full size image">
-      <div class="news-image-lightbox-panel">
-        <button type="button" class="news-image-lightbox-close">Close</button>
-        <img src="" alt="" />
-      </div>
-    </dialog>
     <script>
       (function () {
-        var dlg = document.getElementById("gunship-origins-image-lightbox");
-        if (!dlg) return;
-        var dlgImg = dlg.querySelector("img");
-        var closeBtn = dlg.querySelector(".news-image-lightbox-close");
-
-        function openLightbox(fullSrc, fullAlt) {
-          dlgImg.src = fullSrc;
-          dlgImg.alt = fullAlt || "";
-          dlg.showModal();
-        }
-
-        function closeLightbox() {
-          dlg.close();
-          dlgImg.removeAttribute("src");
-          dlgImg.alt = "";
-        }
-
-        document.querySelectorAll(".js-gunship-lightbox").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            openLightbox(btn.getAttribute("data-full-src"), btn.getAttribute("data-full-alt"));
-          });
-        });
-
-        closeBtn.addEventListener("click", closeLightbox);
-        dlg.addEventListener("click", function (e) {
-          if (e.target === dlg) closeLightbox();
-        });
-        dlg.addEventListener("cancel", function (e) {
-          e.preventDefault();
-          closeLightbox();
+        var btn = document.querySelector(".about-game-expand-btn");
+        var rest = document.getElementById("about-game-rest");
+        var wrap = document.querySelector(".about-game-expand-wrap");
+        if (!btn || !rest || !wrap) return;
+        btn.addEventListener("click", function () {
+          rest.hidden = false;
+          wrap.hidden = true;
+          btn.setAttribute("aria-expanded", "true");
         });
       })();
     </script>
