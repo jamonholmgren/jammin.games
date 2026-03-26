@@ -55,6 +55,14 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  color: var(--primary-light);
+}
+
 /* Vignette effect */
 body::before {
   content: "";
@@ -1378,6 +1386,95 @@ body.home-landing .hero.hero--splash {
   letter-spacing: 1px;
 }
 
+.news-item > h2:first-of-type {
+  color: var(--text-color);
+  font-family: var(--title-font);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.news-item h2 ~ h2 {
+  font-family: var(--title-font);
+  color: var(--primary-color);
+  margin: 2rem 0 1rem 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.news-item section h3 {
+  font-size: 1rem;
+  margin: 1.25rem 0 0.75rem 0;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.news-image-zoom {
+  all: unset;
+  box-sizing: border-box;
+  cursor: zoom-in;
+  display: block;
+  width: 100%;
+}
+
+.news-image-zoom:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.news-image-lightbox {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-image-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+}
+
+.news-image-lightbox-panel {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.news-image-lightbox-panel img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 5rem);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.news-image-lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  color: #eee;
+  background: rgba(48, 48, 48, 0.95);
+  border: 1px solid #666;
+  border-radius: 2px;
+}
+
 .news-image {
   width: 100%;
   height: auto;
@@ -1430,6 +1527,14 @@ body.home-landing .hero.hero--splash {
 
   .news-item h3 {
     font-size: 1.1rem;
+  }
+
+  .news-item > h2:first-of-type {
+    font-size: 1.1rem;
+  }
+
+  .news-item h2 ~ h2 {
+    font-size: 1rem;
   }
 
   .news-item p {

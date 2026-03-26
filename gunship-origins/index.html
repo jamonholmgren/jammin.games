@@ -9,7 +9,7 @@
       name="description"
       content="Gunship Origins: combat helicopter game from Jammin Games, published by MicroProse. Wishlist it on Steam! Co-op multiplayer, campaigns, classic helicopter action."
     />
-    <link rel="stylesheet" href="../css/styles.css?v=20250324" />
+    <link rel="stylesheet" href="../css/styles.css?v=20250325" />
     <style>
       .game-header {
         height: 70vh;
@@ -374,7 +374,170 @@
 
     <div class="container news-section">
       <h2>Latest News</h2>
-      <div class="news-item" id="microprose-partnership">
+      <article class="news-item" id="nerding-out-about-ai-wingmen">
+        <h2>Nerding Out About AI Wingmen</h2>
+        <header>
+          <p>
+            <time datetime="2026-03-25">March 25, 2026</time>
+            by Jamon Holmgren
+          </p>
+        </header>
+        <p>
+          Although you can fly with only other humans if you want, AI teammates
+          are a big part of Gunship Origins.
+        </p>
+        <figure class="news-image">
+          <button
+            type="button"
+            class="news-image-zoom js-gunship-lightbox"
+            data-full-src="../assets/images/gunship-origins-0.4-wingmen.jpg"
+            data-full-alt="In-game view of AI wingmen flying with the player"
+            aria-label="View full size: AI wingmen screenshot"
+          >
+            <img
+              src="../assets/images/gunship-origins-0.4-wingmen.jpg"
+              alt="In-game view of AI wingmen flying with the player"
+              width="4096"
+              height="2304"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        </figure>
+        <p>
+          What&rsquo;s really cool is that they&rsquo;re modeled internally as
+          individual characters (NPCs) with an individual event / decision /
+          action loop which is throttled at their skill level for the given event
+          type.
+        </p>
+        <p>
+          For an AI-controlled helicopter, there are actually two NPCs in there,
+          not just one generic AI for the whole helicopter.
+        </p>
+        <p>
+          They split up the responsibilities for operating the helicopter based
+          on their seat&rsquo;s role (pilot or copilot/gunner), but also will
+          both take events from a prioritized shared queue and do them.
+        </p>
+        <figure class="news-image">
+          <button
+            type="button"
+            class="news-image-zoom js-gunship-lightbox"
+            data-full-src="../assets/images/gunship-origins-0.4-wingmen-code.jpg"
+            data-full-alt="Code excerpt showing NPC wingman event and action logic"
+            aria-label="View full size: wingman code screenshot"
+          >
+            <img
+              src="../assets/images/gunship-origins-0.4-wingmen-code.jpg"
+              alt="Code excerpt showing NPC wingman event and action logic"
+              width="2128"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        </figure>
+        <p>
+          These NPC (non-playable character) pilots have these characteristics
+          already modeled in code or currently planned, among others:
+        </p>
+        <h2>FATIGUE</h2>
+        <p>
+          NPC pilots can get fatigued by long missions, especially if you have
+          many long, intense missions in a row. There&rsquo;s a build-up of
+          fatigue over time, and you should rest pilots by leaving them in the
+          roster pool for a mission or two; this likely will apply mostly to the
+          campaign mode.
+        </p>
+        <h2>DISTRACTION</h2>
+        <p>
+          NPC pilots can get distracted, depending on their skill/experience
+          and fatigue, which means for a given loop they might not react to an
+          event that comes in as quickly. This is one of the primary ways
+          you&rsquo;ll notice the difference between better and worse wingmen.
+        </p>
+        <p>
+          If you have an inexperienced and fatigued pilot (or wounded!), they
+          might be reacting slowly. The other pilot in the helicopter will be
+          taking on more of the shared action queue which will in turn make that
+          pilot less effective.
+        </p>
+        <p>
+          This means if you have an inexperienced pilot, you should probably
+          put an experienced pilot with them, so the helicopter can still be
+          effective.
+        </p>
+        <h2 id="skill-levels">SKILL LEVELS</h2>
+        <p>
+          It&rsquo;s not just a total skill level. Think more like sports games
+          like Madden, NBA 2k.
+        </p>
+        <p>
+          I currently have piloting, gunnery, and navigation skills modeled, but
+          am going to add more (I hope many more &hellip; give me ideas on what
+          kinds of skills you&rsquo;d like to see and what these might affect)
+        </p>
+        <section aria-labelledby="skill-levels">
+          <h3>PILOTING</h3>
+          <p>
+            How quickly and accurately they fly. This affects formation flying,
+            avoiding obstacles, approaching enemies, etc. Inexperienced pilots
+            will &ldquo;bob&rdquo; up and down more in terms of altitude or
+            linger in visible areas which might give away your position.
+            Excellent pilots will be precise and quick. When you&rsquo;re
+            planning your missions, you&rsquo;ll want to put excellent pilots in
+            the pilot seat, excellent gunners in the copilot/gunner (CP/G) seat.
+          </p>
+          <h3>POTENTIAL</h3>
+          <p>
+            This is a hidden attribute that affects how quickly pilots learn from
+            training and real-world missions. The idea is that you might pick up a
+            good pilot out of flight school, but they&rsquo;re kind of a slow
+            learner for gunnery, so they just never really get that good at
+            firing the chaingun (they&rsquo;re inaccurate, waste ammo). Or, you
+            pick up a young phenom, and they quickly become one of your best
+            pilots. (I&rsquo;m still working on potential / learning, so while
+            this is modeled in code to some degree, it&rsquo;s still a very
+            rough early concept version.)
+          </p>
+          <h3>RECOVERY</h3>
+          <p>
+            (planned) If an NPC pilot is wounded, it may take a few missions for
+            them to recover. You&rsquo;ll have a roster with a couple extra
+            pilots to cover for those who are out injured. If you don&rsquo;t
+            have enough healthy pilots to cover all the crews, you&rsquo;ll have
+            to fly out with fewer helicopters. If you&rsquo;re the only pilot
+            available, then you&rsquo;ll have to skip a mission, which is a
+            negative mission result for the campaign you&rsquo;re on. Those are
+            the breaks &mdash; protect your crews!
+          </p>
+        </section>
+        <h2>NPC PROGRESSION</h2>
+        <p>
+          Of course, NPC pilots have their own ranks, medals, can be WIA
+          (wounded in action) or KIA (killed in action), and you&rsquo;ll have
+          to replace them with fresh green Warrant Officer 1 pilots just out of
+          Fort Rucker flight school.
+        </p>
+        <h2>RANDOM IDEAS</h2>
+        <p>
+          It would be fun to add chemistry and morale characteristics as well.
+        </p>
+        <p>
+          Losing a pilot would mean a hit to your pilots&rsquo; morale, which
+          would increase their distraction chance, which would make them less
+          focused.
+        </p>
+        <p>
+          Having a crew that doesn&rsquo;t get along would also make them less
+          focused. You might need to move them into different helicopters.
+        </p>
+        <p>
+          These are just ideas. What ideas do you have? Email me at
+          <a href="mailto:ideas@jammin.games">ideas@jammin.games</a>!
+        </p>
+      </article>
+      <article class="news-item" id="microprose-partnership">
         <h3>Gunship is back — partnering with MicroProse</h3>
         <p>Posted March 19, 2026 by Jamon Holmgren</p>
         <p>
@@ -407,7 +570,49 @@
           Gunship Origins title live on the
           <a href="/into-the-dawn/">Into the Dawn archive</a>.)
         </p>
-      </div>
+      </article>
     </div>
+
+    <dialog class="news-image-lightbox" id="gunship-origins-image-lightbox" aria-label="Full size image">
+      <div class="news-image-lightbox-panel">
+        <button type="button" class="news-image-lightbox-close">Close</button>
+        <img src="" alt="" />
+      </div>
+    </dialog>
+    <script>
+      (function () {
+        var dlg = document.getElementById("gunship-origins-image-lightbox");
+        if (!dlg) return;
+        var dlgImg = dlg.querySelector("img");
+        var closeBtn = dlg.querySelector(".news-image-lightbox-close");
+
+        function openLightbox(fullSrc, fullAlt) {
+          dlgImg.src = fullSrc;
+          dlgImg.alt = fullAlt || "";
+          dlg.showModal();
+        }
+
+        function closeLightbox() {
+          dlg.close();
+          dlgImg.removeAttribute("src");
+          dlgImg.alt = "";
+        }
+
+        document.querySelectorAll(".js-gunship-lightbox").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            openLightbox(btn.getAttribute("data-full-src"), btn.getAttribute("data-full-alt"));
+          });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+        dlg.addEventListener("click", function (e) {
+          if (e.target === dlg) closeLightbox();
+        });
+        dlg.addEventListener("cancel", function (e) {
+          e.preventDefault();
+          closeLightbox();
+        });
+      })();
+    </script>
   </body>
 </html>
