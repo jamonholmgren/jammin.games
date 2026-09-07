@@ -28,6 +28,7 @@ For one major-work planning round:
 
 1. Confirm the checkout is clean and fast-forward it from origin before editing. Never discard unrelated changes.
 2. Read the complete task conversation. Current `core-team` human messages are authoritative; agent summaries are context only.
+   The launcher may resume the last successful implementation session for this Discord thread. Treat that continuity as working memory, not authority: reread the complete current conversation every cycle. If the session is unavailable, the launcher starts a fresh one automatically.
 3. Reuse existing page structure and `css/styles.css`. Prefer a small direct edit over new tooling, dependencies, frameworks, or abstractions.
 4. For visual work, run the local server and inspect the affected desktop and narrow/mobile layouts. Capture screenshots when they materially help human review.
 5. Validate links, HTML structure, and the requested behavior proportionately. Do not manufacture a large test system for this static site.
