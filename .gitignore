@@ -1,2 +1,4 @@
 .DS_Store
+.agents/discord/
+.agents/discord-output/
 nginx.conf

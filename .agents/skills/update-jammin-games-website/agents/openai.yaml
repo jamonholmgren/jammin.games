@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Jammin Games Website"
+  short_description: "Update and validate the Jammin Games website"
+  default_prompt: "Use $update-jammin-games-website to complete the requested website change."
