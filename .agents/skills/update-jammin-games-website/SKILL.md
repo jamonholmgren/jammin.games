@@ -9,20 +9,23 @@ Work in the canonical `jammin.games` checkout. Read its `README.md`, inspect the
 
 ## Choose the work path
 
-Classify the requested change after reading its complete source conversation. Treat an author's description of the work as a useful hint, not a substitute for inspecting the actual scope.
+Classify the requested change after reading its complete source conversation. Treat an author's description of the work as a useful hint, not a substitute for inspecting the actual scope. A clear tagged current-core request to act is sufficient authorization; do not ask for an extra `ready implement` message.
 
-- **Minor:** wording, links, metadata, isolated content, or a small established-pattern visual adjustment. Implement directly with Cursor Grok 4.6 high or native Grok 4.6 high.
-- **Major:** a new or substantially redesigned page, broad visual-system work, shared navigation or responsive behavior, a design implementation, or a change requiring material architecture or product judgment. Before editing, run the one-round Fable/Astra planning exchange below. Grok owns the final decision and implementation; accept only corrections supported by the repository and request.
+For every model choice, read `/Users/jamon/Code/GunshipOrigins/.agents/skills/jamsession-model-recommendations/SKILL.md`, check Jam Session availability, and discover actual IDs with `jamsession models <provider>`. Do not pin model versions in this skill. Explicit human choices override recommendations, including choices for implementation, planning, or review. If a requested specialist is unavailable, report that rather than silently replacing it.
 
-Do not invoke the planning pair for a minor change. Major implementation waits if either required planner is unavailable.
+- **Minor:** wording, links, metadata, isolated content, or a small established-pattern visual adjustment. A menu-link removal is minor even across many pages. Use a recommended mid-level implementer, normally current non-fast Cursor Grok or native Grok at high effort.
+- **Major:** a new complex visual component, substantial page redesign, or material layout/product decisions not settled by existing patterns. Before editing, run one premium planning exchange below. The implementer owns execution and verifies the advice against the repository and request. File count and touching shared navigation alone do not make work major.
+
+Do not invoke the planning pair for a minor change unless the human asks for it. Use two complementary recommended premium models for major design planning and final review. Honor requests for Fable and Astra by discovering their current available models. Major implementation waits if a required planner is unavailable.
 
 For one major-work planning round:
 
-1. Start fresh read-only sessions for Cursor `claude-fable-5-1-high` with `default` effort and Codex `gpt-6-astra` with `high` effort. Give both the same request and verified repository evidence, and ask each for an independent plan.
-2. Grok combines the supported parts into one candidate.
-3. Resume the Fable session once to challenge that candidate.
-4. Resume the Astra session once to integrate only supported corrections.
-5. Grok verifies disagreements against the repository, records the final plan, and executes it.
+1. Choose the premium pair through the recommendations skill, preferably different model families. Start fresh read-only sessions with the same request, existing components, and verified repository evidence; ask for independent plans.
+2. The implementer combines the supported parts into one candidate.
+3. Resume the first planner once to challenge that candidate.
+4. Resume the second planner once to integrate supported corrections.
+5. Verify disagreements against the repository, record the plan, and implement it.
+6. Before deployment, have both models inspect actual desktop/mobile captures and the implementation against the request and agreed plan. Reuse their planning sessions for continuity. Fix concrete findings and verify the resulting visuals; missing captures are not a visual pass.
 
 ## Implement
 
@@ -34,7 +37,7 @@ For one major-work planning round:
 5. Validate links, HTML structure, and the requested behavior proportionately. Do not manufacture a large test system for this static site.
 6. Before each Discord progress post, fetch messages newer than the last Discord snowflake you read. Incorporate current-core corrections before continuing.
 7. Immediately before committing or pushing and again before the final Discord post, run the exact source-verification command supplied by the launcher. Stop without further publication if it fails.
-8. Commit the scoped website changes. Pull with rebase, resolve only understood conflicts, rerun the relevant checks, and push. Never force-push.
-9. Report what changed, the commit, validation, and any remaining human review in the source Discord thread using concise plain English.
+8. Commit the scoped website changes. When deployment is authorized (including the normal `ready implement` workflow), pull with rebase, resolve only understood conflicts, rerun the relevant checks, and push. Never force-push. A clear request to edit does not override an explicit instruction to hold deployment.
+9. Report what changed, the commit, validation, and any remaining human review in the source Discord thread using concise plain English. Distinguish pushed changes from a verified live deployment; only say it is live after checking the deployed site.
 
 Keep secrets, credentials, unpublished private material, and lengthy internal reasoning out of Discord and the website.
