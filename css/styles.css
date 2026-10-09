@@ -148,9 +148,17 @@ textarea {
 }
 
 .primary-nav a {
+  position: relative;
   text-decoration: none;
   font-size: 0.92rem;
   letter-spacing: 0.04em;
+}
+
+.primary-nav a::before {
+  content: "";
+  position: absolute;
+  /* Larger click area. The box is invisible, so type size and header height stay put. */
+  inset: -0.7rem -0.5rem;
 }
 
 .primary-nav a[aria-current="page"] {
@@ -384,6 +392,14 @@ summary:focus-visible {
   scroll-snap-align: start;
 }
 
+.strip-center .strip-scroller {
+  justify-content: safe center;
+}
+
+.strip-center .cover-card {
+  scroll-snap-align: center;
+}
+
 .strip-scroller img,
 .cover-card img {
   display: block;
@@ -585,7 +601,7 @@ details.faq {
 details.faq summary {
   cursor: pointer;
   padding: 0.95rem 1.1rem;
-  text-align: center;
+  text-align: left;
   font-weight: 700;
   list-style: none;
 }
@@ -596,7 +612,7 @@ details.faq summary::-webkit-details-marker {
 
 details.faq .answer {
   padding: 0 1.4rem 1.2rem;
-  text-align: center;
+  text-align: left;
 }
 
 details.faq .answer p {
@@ -743,6 +759,19 @@ details.faq a {
   text-align: left;
 }
 
+.person-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+}
+
+.person-links a {
+  color: var(--c-yellow);
+  text-decoration: none;
+}
+
 .person .callsign,
 .person .role {
   text-align: center;
@@ -871,6 +900,11 @@ details.faq a {
     margin-left: 0;
     justify-content: center;
     padding-bottom: 0.4rem;
+  }
+
+  .primary-nav a::before {
+    /* Wrapped rows sit close together, so keep the extra hit area inside the row gap. */
+    inset: -0.15rem -0.45rem;
   }
 
   .header-tools {
