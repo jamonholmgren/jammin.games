@@ -11,7 +11,7 @@
       name="description"
       content="Into the Dawn was the former name of Gunship Origins, published by MicroProse. This page archives development updates; visit Gunship Origins for the current game."
     />
-    <link rel="stylesheet" href="../css/styles.css?v=20250324" />
+    <link rel="stylesheet" href="../css/styles.css?v=20261009" />
     <style>
       .game-header {
         height: 70vh;
@@ -156,105 +156,35 @@
       }
     </style>
   </head>
-  <body>
-    <nav class="nav-site">
-      <div class="container nav-content nav-content--home">
-        <a class="nav-brand" href="/"
-          ><span class="nav-brand-text">Jammin Games</span></a
-        >
-        <div class="nav-links nav-links--home">
-          <a
-            class="nav-game-logo-link"
-            href="/gunship-origins"
-            aria-label="Gunship Origins"
-            ><img
-              class="nav-game-logo"
-              src="../assets/images/logo-gunship-origins.png"
-              width="1000"
-              height="333"
-              alt=""
-              decoding="async"
-          /></a>
-          <a href="/about">About</a>
-          <a href="/faq">FAQ</a>
+  <body class="archive">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/home/" aria-label="Jammin Games home">
+          <img src="/assets/site/ui/Jammin_Games_-SingleLine_White.svg" alt="Jammin Games" />
+        </a>
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="/">Gunship Origins</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/gunship-history/">Gunship History</a>
+          <a href="/about/">Our Team</a>
+        </nav>
+        <div class="header-tools">
+
+        <div class="socials" aria-label="Social links">
+          <a href="https://x.com/jammingames" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://twitch.tv/jamonholmgren" target="_blank" rel="noopener noreferrer" aria-label="Twitch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714V11.143z"/></svg></a>
+          <a href="https://www.youtube.com/@JamminGameDev" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a2.93 2.93 0 0 0-2.063-2.075C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.435.611A2.93 2.93 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.93 2.93 0 0 0 2.063 2.075C4.45 20.5 12 20.5 12 20.5s7.55 0 9.435-.611a2.93 2.93 0 0 0 2.063-2.075C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://store.steampowered.com/app/4055780/" target="_blank" rel="noopener noreferrer" aria-label="Steam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.868.051 11.065l6.432 2.672a3.387 3.387 0 0 1 1.825-3.615l4.602-3.33c.14-.101.287-.19.439-.264L11.979 0zm0 11.862a3.138 3.138 0 1 0 0 6.276 3.138 3.138 0 0 0 0-6.276zm5.776 4.08-2.223.92a3.397 3.397 0 0 1-1.673 2.05c.334.48.89.794 1.524.794a1.64 1.64 0 0 0 1.64-1.64c0-.555-.276-1.042-.684-1.124h-.002zm-6.48-4.08a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM23.95 11.09a11.96 11.96 0 0 0-7.886-7.888l-.003 4.593a3.09 3.09 0 0 1 1.704 2.758v.008a3.096 3.096 0 0 1-3.09 3.09h-.01a3.093 3.093 0 0 1-2.784-1.768l-3.316 2.4a11.977 11.977 0 0 0 15.385-3.193z"/></svg></a>
         </div>
-        <div class="nav-right">
-          <div class="social-icons" aria-label="Social links">
-            <a
-              href="https://x.com/jammingames"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="X"
-              ><svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                /></svg
-            ></a>
-            <a
-              href="https://twitch.tv/jamonholmgren"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="Twitch"
-              ><svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714V11.143z"
-                /></svg
-            ></a>
-            <a
-              href="https://www.youtube.com/@JamminGameDev"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="YouTube"
-              ><svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M23.498 6.186a2.93 2.93 0 0 0-2.063-2.075C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.435.611A2.93 2.93 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.93 2.93 0 0 0 2.063 2.075C4.45 20.5 12 20.5 12 20.5s7.55 0 9.435-.611a2.93 2.93 0 0 0 2.063-2.075C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                /></svg
-            ></a>
-            <a
-              href="https://store.steampowered.com/app/4055780/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="Steam"
-              ><svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M11.979 0C5.678 0 .511 4.868.051 11.065l6.432 2.672a3.387 3.387 0 0 1 1.825-3.615l4.602-3.33c.14-.101.287-.19.439-.264L11.979 0z m0 11.862a3.138 3.138 0 1 0 0 6.276 3.138 3.138 0 0 0 0-6.276zm5.776 4.08l-2.223.92a3.397 3.397 0 0 1-1.673 2.05c.334.48.89.794 1.524.794a1.64 1.64 0 0 0 1.64-1.64c0-.555-.276-1.042-.684-1.124h-.002zm-6.48-4.08a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM23.95 11.09a11.96 11.96 0 0 0-7.886-7.888l-.003 4.593a3.09 3.09 0 0 1 1.704 2.758v.008a3.096 3.096 0 0 1-3.09 3.09h-.01a3.093 3.093 0 0 1-2.784-1.768l-3.316 2.4a11.977 11.977 0 0 0 15.385-3.193z"
-                /></svg
-            ></a>
-          </div>
-          <a class="nav-contact-btn" href="/about">Contact</a>
+
+          <a class="btn" href="mailto:contact@jammin.games">Contact</a>
         </div>
       </div>
-    </nav>
+    </header>
 
-    <div class="game-header">
+
+    <div class="game-header" id="main">
       <img src="../assets/images/alpha-0.4.jpg" alt="Into the Dawn" />
     </div>
 
@@ -280,7 +210,7 @@
           and store page, head to the new site section.
         </p>
         <p class="game-header-actions">
-          <a class="nav-contact-btn" href="/gunship-origins/"
+          <a class="nav-contact-btn" href="/"
             >Go to Gunship Origins</a
           >
         </p>
@@ -850,5 +780,37 @@
         }
       });
     </script>
+      <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/site/ui/Jammin_Games_-Stacked_White.svg" alt="Jammin Games" />
+          <p>Journey beyond code.</p>
+          <p>Jammin Games is a game developer operating out of the USA, with members in the EU and UK.</p>
+
+        <div class="socials" aria-label="Social links">
+          <a href="https://x.com/jammingames" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://twitch.tv/jamonholmgren" target="_blank" rel="noopener noreferrer" aria-label="Twitch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714V11.143z"/></svg></a>
+          <a href="https://www.youtube.com/@JamminGameDev" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a2.93 2.93 0 0 0-2.063-2.075C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.435.611A2.93 2.93 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.93 2.93 0 0 0 2.063 2.075C4.45 20.5 12 20.5 12 20.5s7.55 0 9.435-.611a2.93 2.93 0 0 0 2.063-2.075C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://store.steampowered.com/app/4055780/" target="_blank" rel="noopener noreferrer" aria-label="Steam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.868.051 11.065l6.432 2.672a3.387 3.387 0 0 1 1.825-3.615l4.602-3.33c.14-.101.287-.19.439-.264L11.979 0zm0 11.862a3.138 3.138 0 1 0 0 6.276 3.138 3.138 0 0 0 0-6.276zm5.776 4.08-2.223.92a3.397 3.397 0 0 1-1.673 2.05c.334.48.89.794 1.524.794a1.64 1.64 0 0 0 1.64-1.64c0-.555-.276-1.042-.684-1.124h-.002zm-6.48-4.08a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM23.95 11.09a11.96 11.96 0 0 0-7.886-7.888l-.003 4.593a3.09 3.09 0 0 1 1.704 2.758v.008a3.096 3.096 0 0 1-3.09 3.09h-.01a3.093 3.093 0 0 1-2.784-1.768l-3.316 2.4a11.977 11.977 0 0 0 15.385-3.193z"/></svg></a>
+        </div>
+
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/home/">Home</a>
+          <a href="/">Gunship Origins</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/gunship-history/">Gunship History</a>
+          <a href="mailto:contact@jammin.games">Contact</a>
+        </nav>
+        <nav class="legal-nav" aria-label="Legal">
+          <a href="/privacy/#privacy">Privacy Policy</a>
+          <a href="/privacy/#terms">Terms of Use</a>
+        </nav>
+      </div>
+      <p class="legal-note">© 2024-present Jammin Games. All rights reserved.<br />
+        Jammin Games, its logos and assets, and the game Gunship Origins and all associated assets are copyright Jamon Holmgren, owner of Jammin Games.<br />
+        Gunship, Gunship 2000, and Gunship! are trademarks of their respective owners. Other games, logos, and screenshots belong to their respective owners.</p>
+    </footer>
+    <script src="/js/site.js" defer></script>
   </body>
 </html>
