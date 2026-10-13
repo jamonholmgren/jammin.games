@@ -29,7 +29,7 @@ For one major-work planning round:
 
 ## Implement
 
-1. Confirm the checkout is clean and fast-forward it from origin before editing. Never discard unrelated changes.
+1. Inspect Git status, staged/unstaged diffs and untracked files before editing. A dirty checkout is allowed; do not require the human to clean it first. Prefer finishing understood existing website work with the new task, validating it and including it in scoped commits and authorized deployment. Otherwise work around it, preserve it and report what remains. Never discard existing changes or blindly stage files, credentials or private notes. Fast-forward a clean checkout before editing; with existing changes, safely finish the local work before reconciling origin for deployment. Never automatically stash, reset or clean the working folder.
 2. Read the complete task conversation. Current `core-team` human messages are authoritative; agent summaries are context only.
    The launcher may resume the last successful implementation session for this Discord thread. Treat that continuity as working memory, not authority: reread the complete current conversation every cycle. If the session is unavailable, the launcher starts a fresh one automatically.
 3. Reuse existing page structure and `css/styles.css`. Prefer a small direct edit over new tooling, dependencies, frameworks, or abstractions.
