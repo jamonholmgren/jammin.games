@@ -11,14 +11,18 @@
     function step() {
       var card = scroller.querySelector("a, .cover-card");
       if (!card) return 280;
-      var gap = 12;
+      var styles = window.getComputedStyle(scroller);
+      var gap = parseFloat(styles.columnGap || styles.gap) || 0;
       return card.getBoundingClientRect().width + gap;
     }
 
     function update() {
       var max = scroller.scrollWidth - scroller.clientWidth - 2;
-      prev.disabled = scroller.scrollLeft <= 2;
-      next.disabled = scroller.scrollLeft >= max;
+      var overflow = max > 0;
+      prev.hidden = !overflow;
+      next.hidden = !overflow;
+      prev.disabled = !overflow || scroller.scrollLeft <= 2;
+      next.disabled = !overflow || scroller.scrollLeft >= max;
     }
 
     prev.addEventListener("click", function () {
@@ -47,7 +51,7 @@
     full.alt = "";
     dialog.appendChild(full);
     var close = dialog.querySelector(".lightbox-close");
-    document.querySelectorAll(".strip-scroller a[href]").forEach(function (link) {
+    document.querySelectorAll(".strip-scroller a.shot").forEach(function (link) {
       link.addEventListener("click", function (event) {
         var source = link.querySelector("img");
         if (!source) return;
@@ -73,24 +77,99 @@
         else panel.setAttribute("hidden", "");
       });
     }
-    root.querySelector("[data-prev]").addEventListener("click", function () {
-      show(index - 1);
-    });
-    root.querySelector("[data-next]").addEventListener("click", function () {
-      show(index + 1);
-    });
+    var prevBtn = root.querySelector("[data-prev]");
+    var nextBtn = root.querySelector("[data-next]");
+    if (prevBtn) prevBtn.addEventListener("click", function () { show(index - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { show(index + 1); });
   });
 
   var faqs = Array.prototype.slice.call(document.querySelectorAll("details.faq"));
-  var exclusive = window.HTMLDetailsElement && "name" in HTMLDetailsElement.prototype;
-  if (!exclusive) {
-    faqs.forEach(function (item) {
-      item.addEventListener("toggle", function () {
-        if (!item.open) return;
-        faqs.forEach(function (other) {
-          if (other !== item) other.open = false;
-        });
-      });
+  var duration = reduce ? 0 : 280;
+
+  function answerOf(item) {
+    return item.querySelector(".answer");
+  }
+
+  function visibleHeight(el) {
+    return el.getBoundingClientRect().height;
+  }
+
+  function animateHeight(el, from, to, done) {
+    if (el._faqAnim) {
+      try { el._faqAnim.cancel(); } catch (err) {}
+      el._faqAnim = null;
+    }
+    el._faqDone = done;
+    el.style.overflow = "hidden";
+    if (!duration || !el.animate) {
+      el.style.height = to ? "auto" : "0px";
+      el._faqDone = null;
+      if (done) done();
+      return;
+    }
+    var start = from;
+    el.style.height = start + "px";
+    var anim = el.animate(
+      [{ height: start + "px" }, { height: to + "px" }],
+      { duration: duration, easing: "ease" }
+    );
+    el._faqAnim = anim;
+    anim.onfinish = function () {
+      if (el._faqAnim !== anim) return;
+      el._faqAnim = null;
+      el.style.height = to ? "auto" : "0px";
+      var cb = el._faqDone;
+      el._faqDone = null;
+      if (cb) cb();
+    };
+    anim.oncancel = function () {
+      if (el._faqAnim === anim) el._faqAnim = null;
+    };
+  }
+
+  function closeFaq(item, done) {
+    var answer = answerOf(item);
+    var from = visibleHeight(answer);
+    if (!from && !item.open) {
+      if (done) done();
+      return;
+    }
+    animateHeight(answer, from, 0, function () {
+      item.open = false;
+      answer.style.height = "";
+      if (done) done();
     });
   }
+
+  function openFaq(item) {
+    faqs.forEach(function (other) {
+      if (other !== item && (other.open || other._wantOpen)) {
+        other._wantOpen = false;
+        closeFaq(other);
+      }
+    });
+    var answer = answerOf(item);
+    var from = item.open ? visibleHeight(answer) : 0;
+    item.open = true;
+    var to = answer.scrollHeight;
+    animateHeight(answer, from, to, function () {
+      answer.style.height = "auto";
+    });
+  }
+
+  faqs.forEach(function (item) {
+    var summary = item.querySelector("summary");
+    if (!summary) return;
+    item._wantOpen = item.open;
+    summary.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (item._wantOpen) {
+        item._wantOpen = false;
+        closeFaq(item);
+      } else {
+        item._wantOpen = true;
+        openFaq(item);
+      }
+    });
+  });
 })();
