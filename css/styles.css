@@ -85,8 +85,8 @@ body {
   background-image: url("/assets/site/ui/bg-grey.png");
   background-position: center top;
   background-size: max(100%, 1280px) auto;
-  background-repeat: repeat-y;
-  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--c-text);
   font-family: var(--font);
   font-weight: 500;
@@ -627,11 +627,11 @@ summary:focus-visible {
 }
 
 .gtk .kicker {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.05rem;
 }
 
 .gtk .subhead {
-  margin: 0.15rem 0 clamp(0.6rem, 1.2vw, 1.25rem);
+  margin: 0 0 clamp(0.6rem, 1.2vw, 1.25rem);
 }
 
 .gtk-stage {
@@ -920,8 +920,21 @@ details.faq a {
   margin-inline: 0 auto;
 }
 
+.history-title-86 {
+  margin-bottom: 0.2rem;
+}
+
 .history-title-86 img {
   width: min(100%, 320px);
+}
+
+.history-title-2000 img {
+  /* PNG has ~43px of empty canvas left of the G at 426px wide. */
+  margin-left: calc(min(100%, 400px) * -43 / 426);
+}
+
+.history-title-bang {
+  margin-bottom: 1.05rem;
 }
 
 .history-entry .meta {
