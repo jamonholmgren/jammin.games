@@ -44,9 +44,9 @@
   --rule: 3px;
   --track: 0.025em;
   --track-tight: -0.025em;
-  --fs-title: clamp(2rem, 4.4vw, 4rem);
-  --fs-subtitle: clamp(1.5rem, 3.3vw, 3rem);
   --fs-iconic: clamp(1.35rem, 0.9rem + 1.6vw, 2.25rem);
+  --fs-title: var(--fs-iconic);
+  --fs-subtitle: clamp(1.01rem, 0.67rem + 1.2vw, 1.6875rem);
   --fs-lead: clamp(1.1rem, 0.8rem + 0.8vw, 1.375rem);
   --fs-btn: clamp(1.1rem, 0.7rem + 1.2vw, 1.75rem);
   --faq-a: 1.05rem;
@@ -85,7 +85,7 @@ body {
   background-image: url("/assets/site/ui/bg-grey.png");
   background-position: center top;
   background-size: max(100%, 1280px) auto;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-attachment: scroll;
   color: var(--c-text);
   font-family: var(--font);
@@ -194,7 +194,15 @@ textarea {
   inset: -0.7rem -0.5rem;
 }
 
+.primary-nav a:hover {
+  color: #fff;
+}
+
 .primary-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.primary-nav a[aria-current="page"]:hover {
   color: var(--accent);
 }
 
@@ -236,7 +244,7 @@ textarea {
   align-items: center;
   justify-content: center;
   min-height: 0;
-  padding: 0.5em 1.15em;
+  padding: 0.62em 1.15em 0.42em;
   line-height: 1;
   border: 0;
   background: var(--c-yellow);
@@ -279,6 +287,7 @@ textarea {
 
 .btn:hover {
   background: var(--c-yellow-hi);
+  filter: brightness(1.1);
 }
 
 .btn-blue:hover {
@@ -307,8 +316,8 @@ summary:focus-visible {
   position: relative;
   width: 100%;
   min-width: 0;
-  min-height: 550px;
-  aspect-ratio: 2557 / 790;
+  min-height: 450px;
+  aspect-ratio: 2557 / 690;
   display: grid;
   place-items: center;
   text-align: center;
@@ -367,6 +376,10 @@ summary:focus-visible {
 
 .display {
   text-align: center;
+}
+
+.home-lead {
+  margin-top: 0.9rem;
 }
 
 .subhead {
@@ -459,6 +472,7 @@ summary:focus-visible {
 
 .pitch p {
   margin: 0.75em 0;
+  font-weight: 500;
 }
 
 .section {
@@ -550,7 +564,7 @@ summary:focus-visible {
   z-index: 2;
   width: 44px;
   height: 44px;
-  padding: 0 0 0.12em;
+  padding: 0;
   border-radius: 50%;
   border: 2px solid var(--c-text);
   background: rgba(16, 16, 16, 0.72);
@@ -598,8 +612,18 @@ summary:focus-visible {
   align-items: center;
 }
 
+.panel {
+  position: relative;
+}
+
 .panel[hidden] {
   display: none;
+}
+
+.gtk .kicker,
+.gtk .subhead {
+  position: relative;
+  z-index: 5;
 }
 
 .gtk .kicker {
@@ -612,6 +636,7 @@ summary:focus-visible {
 
 .gtk-stage {
   position: relative;
+  z-index: 1;
   width: min(100%, 2044px);
   margin-inline: auto;
   aspect-ratio: 1000 / 434;
@@ -699,10 +724,20 @@ summary:focus-visible {
   text-shadow: 0 1px 2px #000;
 }
 
+.gtk-kiowa .apache-art {
+  left: 10.5%;
+  top: -14%;
+}
+
+.gtk-blackhawk .apache-art {
+  left: 10.5%;
+  top: -1%;
+}
+
 .switch-btn {
   width: 44px;
   height: 44px;
-  padding: 0 0 0.12em;
+  padding: 0;
   border-radius: 50%;
   border: 2px solid var(--c-text);
   background: rgba(16, 16, 16, 0.72);
@@ -772,7 +807,7 @@ details.faq summary {
   padding: 1rem 1.4rem;
   text-align: left;
   font-weight: 900;
-  font-size: calc(var(--faq-a) * 22 / 14);
+  font-size: calc(var(--faq-a) * 18 / 14);
   letter-spacing: var(--track);
   line-height: 1.2;
   list-style: none;
@@ -787,6 +822,7 @@ details.faq .answer {
   overflow: hidden;
   text-align: left;
   font-size: var(--faq-a);
+  font-weight: 500;
   letter-spacing: var(--track);
 }
 
@@ -826,8 +862,8 @@ details.faq a {
   position: relative;
   width: 100%;
   min-width: 0;
-  min-height: 550px;
-  aspect-ratio: 2557 / 790;
+  min-height: 450px;
+  aspect-ratio: 2557 / 690;
   display: grid;
   place-items: center;
   background: #000 center / cover no-repeat;
@@ -881,6 +917,11 @@ details.faq a {
   display: block;
   width: min(100%, 400px);
   height: auto;
+  margin-inline: 0 auto;
+}
+
+.history-title-86 img {
+  width: min(100%, 320px);
 }
 
 .history-entry .meta {
@@ -976,6 +1017,7 @@ details.faq a {
 
 .person p {
   font-size: 0.92rem;
+  font-weight: 500;
   text-align: center;
   letter-spacing: 0;
 }
@@ -1021,8 +1063,10 @@ details.faq a {
 }
 
 .footer-brand > img {
+  display: block;
   height: 96px;
   width: auto;
+  margin-left: calc(96px * -25.16 / 187.98);
 }
 
 .footer-brand p,
@@ -1041,7 +1085,7 @@ details.faq a {
   text-align: left;
   margin: 1rem 0 0;
   font-weight: 900;
-  font-size: calc(var(--faq-a) * 22 / 14);
+  font-size: calc(var(--faq-a) * 18 / 14);
   letter-spacing: var(--track);
   padding: 1rem 1.4rem 0;
 }
@@ -1231,7 +1275,7 @@ details.faq a {
 @media (max-width: 760px) {
   .hero,
   .history-banner {
-    min-height: 420px;
+    min-height: 320px;
     aspect-ratio: auto;
     padding-top: 3rem;
   }

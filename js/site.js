@@ -81,6 +81,8 @@
     var nextBtn = root.querySelector("[data-next]");
     if (prevBtn) prevBtn.addEventListener("click", function () { show(index - 1); });
     if (nextBtn) nextBtn.addEventListener("click", function () { show(index + 1); });
+    if (location.hash === "#kiowa") show(1);
+    else if (location.hash === "#blackhawk") show(2);
   });
 
   var faqs = Array.prototype.slice.call(document.querySelectorAll("details.faq"));
