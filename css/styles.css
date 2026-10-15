@@ -1,5 +1,13 @@
 @font-face {
   font-family: Binaria;
+  src: url("/assets/fonts/Binaria-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Binaria;
   src: url("/assets/fonts/Binaria-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
@@ -427,7 +435,7 @@ summary:focus-visible {
 .hero .tagline {
   margin: 0.8rem 0 0;
   font-weight: 900;
-  font-size: var(--fs-subtitle);
+  font-size: var(--fs-title);
   letter-spacing: var(--track);
   text-transform: uppercase;
 }
@@ -626,8 +634,11 @@ summary:focus-visible {
   z-index: 5;
 }
 
-.gtk .kicker {
-  margin: 0 0 0.05rem;
+.gtk .section > .kicker {
+  /* A modest title increase, with the tight heading pair from the reference. */
+  font-size: calc(var(--fs-title) * 1.1);
+  line-height: 0.86;
+  margin: 0 0 0.22rem;
 }
 
 .gtk .subhead {
@@ -807,7 +818,7 @@ details.faq summary {
   padding: 1rem 1.4rem;
   text-align: left;
   font-weight: 900;
-  font-size: calc(var(--faq-a) * 18 / 14);
+  font-size: calc(var(--faq-a) * 16 / 14);
   letter-spacing: var(--track);
   line-height: 1.2;
   list-style: none;
@@ -822,7 +833,7 @@ details.faq .answer {
   overflow: hidden;
   text-align: left;
   font-size: var(--faq-a);
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: var(--track);
 }
 
@@ -1095,7 +1106,7 @@ details.faq a {
 }
 
 .ask {
-  text-align: left;
+  text-align: center;
   margin: 1rem 0 0;
   font-weight: 900;
   font-size: calc(var(--faq-a) * 18 / 14);
@@ -1319,23 +1330,26 @@ details.faq a {
   }
 
   .gunship-switch {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    position: relative;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .gunship-switch > div {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 1;
     width: 100%;
   }
 
   .gunship-switch [data-prev] {
-    grid-column: 1;
-    grid-row: 1;
+    position: absolute;
+    top: 2rem;
+    left: 0;
   }
 
   .gunship-switch [data-next] {
-    grid-column: 3;
-    grid-row: 1;
+    position: absolute;
+    top: 2rem;
+    right: 0;
   }
 
   .site-header .socials {
